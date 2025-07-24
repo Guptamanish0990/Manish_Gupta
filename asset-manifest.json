@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Manish_Gupta/static/css/main.beebc7e2.css",
-    "main.js": "/Manish_Gupta/static/js/main.50e6c03f.js",
+    "main.css": "/Manish_Gupta/static/css/main.710d2ca4.css",
+    "main.js": "/Manish_Gupta/static/js/main.4ceb6326.js",
     "static/js/453.acca0757.chunk.js": "/Manish_Gupta/static/js/453.acca0757.chunk.js",
     "static/media/woocommerce Website.png": "/Manish_Gupta/static/media/woocommerce Website.baf082df6e953296e1d9.png",
     "static/media/Nsexecutionsllp-app.png": "/Manish_Gupta/static/media/Nsexecutionsllp-app.651c688eb10987eb4cf9.png",
@@ -17,12 +17,12 @@
     "static/media/manish-about.jpg": "/Manish_Gupta/static/media/manish-about.4cac51d8e1148f024b58.jpg",
     "static/media/professional-developer.png": "/Manish_Gupta/static/media/professional-developer.ba1d6c77f0afd3857afc.png",
     "index.html": "/Manish_Gupta/index.html",
-    "main.beebc7e2.css.map": "/Manish_Gupta/static/css/main.beebc7e2.css.map",
-    "main.50e6c03f.js.map": "/Manish_Gupta/static/js/main.50e6c03f.js.map",
+    "main.710d2ca4.css.map": "/Manish_Gupta/static/css/main.710d2ca4.css.map",
+    "main.4ceb6326.js.map": "/Manish_Gupta/static/js/main.4ceb6326.js.map",
     "453.acca0757.chunk.js.map": "/Manish_Gupta/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.beebc7e2.css",
-    "static/js/main.50e6c03f.js"
+    "static/css/main.710d2ca4.css",
+    "static/js/main.4ceb6326.js"
   ]
 }
