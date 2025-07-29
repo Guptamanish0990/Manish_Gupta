@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/Manish_Gupta/static/css/main.fa5dbe48.css",
-    "main.js": "/Manish_Gupta/static/js/main.dd892355.js",
+    "main.js": "/Manish_Gupta/static/js/main.fed3a6d1.js",
     "static/js/453.acca0757.chunk.js": "/Manish_Gupta/static/js/453.acca0757.chunk.js",
     "static/media/woocommerce Website.png": "/Manish_Gupta/static/media/woocommerce Website.baf082df6e953296e1d9.png",
-    "static/media/Nsexecutionsllp-app.png": "/Manish_Gupta/static/media/Nsexecutionsllp-app.651c688eb10987eb4cf9.png",
+    "static/media/NS Executions LLP.png": "/Manish_Gupta/static/media/NS Executions LLP.6fa280a51e07341cc8f3.png",
     "static/media/Hair_spa.png": "/Manish_Gupta/static/media/Hair_spa.c11a62496049a31c1f1d.png",
     "static/media/Dentaldoctor-webperfecto.png": "/Manish_Gupta/static/media/Dentaldoctor-webperfecto.f2431cea03b49c3e211f.png",
     "static/media/Event Management System.png": "/Manish_Gupta/static/media/Event Management System.1b13e52b8d5708b6fd57.png",
@@ -18,11 +18,11 @@
     "static/media/professional-developer.png": "/Manish_Gupta/static/media/professional-developer.ba1d6c77f0afd3857afc.png",
     "index.html": "/Manish_Gupta/index.html",
     "main.fa5dbe48.css.map": "/Manish_Gupta/static/css/main.fa5dbe48.css.map",
-    "main.dd892355.js.map": "/Manish_Gupta/static/js/main.dd892355.js.map",
+    "main.fed3a6d1.js.map": "/Manish_Gupta/static/js/main.fed3a6d1.js.map",
     "453.acca0757.chunk.js.map": "/Manish_Gupta/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fa5dbe48.css",
-    "static/js/main.dd892355.js"
+    "static/js/main.fed3a6d1.js"
   ]
 }
