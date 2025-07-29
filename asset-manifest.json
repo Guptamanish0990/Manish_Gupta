@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Manish_Gupta/static/css/main.fa5dbe48.css",
-    "main.js": "/Manish_Gupta/static/js/main.fed3a6d1.js",
+    "main.js": "/Manish_Gupta/static/js/main.c48d268d.js",
     "static/js/453.acca0757.chunk.js": "/Manish_Gupta/static/js/453.acca0757.chunk.js",
     "static/media/woocommerce Website.png": "/Manish_Gupta/static/media/woocommerce Website.baf082df6e953296e1d9.png",
     "static/media/NS Executions LLP.png": "/Manish_Gupta/static/media/NS Executions LLP.6fa280a51e07341cc8f3.png",
@@ -13,16 +13,16 @@
     "static/media/vscode-icon.png": "/Manish_Gupta/static/media/vscode-icon.7f96af15574fa0fd9959.png",
     "static/media/DC Motor Control via Mobile.png": "/Manish_Gupta/static/media/DC Motor Control via Mobile.cd58e4d7820b48207a49.png",
     "static/media/MH-logo.png": "/Manish_Gupta/static/media/MH-logo.e7ea1ef629b0c3f3daea.png",
-    "static/media/Jainandco-webperfecto.png": "/Manish_Gupta/static/media/Jainandco-webperfecto.7bbe2b3689bf9cfd5107.png",
+    "static/media/Jainandco-webperfecto.png": "/Manish_Gupta/static/media/Jainandco-webperfecto.92b74d10d7183ad23218.png",
     "static/media/MLGUI -Tool.jpg": "/Manish_Gupta/static/media/MLGUI -Tool.ddf2530f672a01a3571f.jpg",
     "static/media/professional-developer.png": "/Manish_Gupta/static/media/professional-developer.ba1d6c77f0afd3857afc.png",
     "index.html": "/Manish_Gupta/index.html",
     "main.fa5dbe48.css.map": "/Manish_Gupta/static/css/main.fa5dbe48.css.map",
-    "main.fed3a6d1.js.map": "/Manish_Gupta/static/js/main.fed3a6d1.js.map",
+    "main.c48d268d.js.map": "/Manish_Gupta/static/js/main.c48d268d.js.map",
     "453.acca0757.chunk.js.map": "/Manish_Gupta/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fa5dbe48.css",
-    "static/js/main.fed3a6d1.js"
+    "static/js/main.c48d268d.js"
   ]
 }
