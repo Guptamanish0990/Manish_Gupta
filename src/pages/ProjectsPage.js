@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'; // Framer Motion animation
 
 // Project images & icons
 import vscodeIcon from '../assets/vscode-icon.png';
-import nsExecutionsImage from '../assets/Nsexecutionsllp-app.png';
+import nsExecutionsImage from '../assets/NS Executions LLP.png';
 import jainAndCoImage from '../assets/Jainandco-webperfecto.png';
 import dentalDoctorImage from '../assets/Dentaldoctor-webperfecto.png';
 import questorwingwebSite from '../assets/Questorwing WebSite.png';
@@ -13,6 +13,8 @@ import mlGuiImage from '../assets/MLGUI -Tool.jpg';
 import dcMotorControlImage from '../assets/DC Motor Control via Mobile.png';
 import HairspaWebsite from '../assets/Hair_spa.png';
 import Woocommercewebsite from '../assets/woocommerce Website.png';
+import StreetVadaPavImg from '../assets/street-vada-pav.png';
+
 import {
   FaWordpress, FaHtml5, FaCss3Alt, FaReact, FaPhp, FaWpforms,
   FaStar, FaTools, FaPython, FaDatabase, FaBluetooth, FaShoppingCart
@@ -40,6 +42,17 @@ const cardVariants = {
 
 export default function Projects() {
   const projectList = [
+    {
+  title: 'Street Vada Pav – Live Food Ordering App',
+  description: `A full SPA (Single Page Application) built with React and hosted on Netlify. 
+It showcases a Mumbai street-food ordering experience with routing, cart management, 
+wishlist, and responsive design.`,
+  image: StreetVadaPavImg,
+  link: 'https://street-vada-pav.netlify.app/',   // 🔗 live Netlify URL
+  original: 'https://street-vada-pav.netlify.app/', // optional “original” if you like
+  tools: [<FaReact />, <FaHtml5 />, <FaCss3Alt />, <SiJavascript />],
+},
+
   {
   title: 'Hair Salon Website:- (Demo Project Learning)',
   description: `This is a front-end demo recreation of the official Florian Hurel Hair Couture website. Built with React, HTML5, and CSS3, it replicates the design and layout to showcase UI development and responsive design capabilities.`,
@@ -54,10 +67,7 @@ export default function Projects() {
   image: Woocommercewebsite,
   link: 'http://app-woocommerce-project.u10431mxjg-xlm4180lx3dy.p.temp-site.link/',
   tools: [<FaShoppingCart />, <FaWordpress />, <FaHtml5 />, <FaCss3Alt />, <FaPhp />]
-}
-
-
-,
+},
     {
       title: 'Questor Wing:- Zencraft Consultancy Pvt Ltd',
       description: `A business informational site built for Smit Enterprises to showcase services and products...`,
