@@ -200,9 +200,9 @@
 }
 
 .project-contact-buttons .contact-me {
-  background-color: #ffffff;
-  color: #000000;
-  box-shadow: -10px 9px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: -10px 9px 4px rgb(0 0 0);
 }
 
 .project-contact-buttons .contact-me:hover {

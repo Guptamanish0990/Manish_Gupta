@@ -1,6 +1,6 @@
 // src/pages/Contact.js
 import './Contact.css';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaGithub } from 'react-icons/fa';
+//import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaGithub } from 'react-icons/fa';
 import { PiMapPinBold, PiAtBold, PiPhoneBold } from 'react-icons/pi';
 import { motion } from 'framer-motion';
 
@@ -72,7 +72,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="social-icons flex gap-4 text-2xl mt-4">
+          {/*<div className="social-icons flex gap-4 text-2xl mt-4">
             <a href="https://www.facebook.com/Guptamanish0990/" className="facebook" target="_blank" rel="noopener noreferrer">
               <FaFacebookF />
             </a>
@@ -88,7 +88,7 @@ export default function Contact() {
             <a href="https://github.com/Guptamanish0990" className="github" target="_blank" rel="noopener noreferrer">
               <FaGithub />
             </a>
-          </div>
+          </div>*/}
         </motion.div>
 
         <motion.div className="contact-right" variants={fadeRight}>

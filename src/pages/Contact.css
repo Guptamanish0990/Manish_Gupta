@@ -150,7 +150,7 @@ svg {
 }
 .email-link {
   color: black;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: underline;
 }
 
@@ -283,4 +283,56 @@ svg {
 
 .contact-image-container img:hover {
   transform: scale(1.03);
+}
+@media (max-width: 768px) {
+  .contact-wrapper {
+    padding: 2rem 1rem;
+  }
+
+  .contact-right {
+    padding: 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .contact-title {
+    font-size: 1.5rem;
+  }
+
+  .submit-button {
+    width: 100%; /* full width on small screens */
+    justify-content: center;
+  }
+}
+.contact-right {
+  max-width: 600px;
+}
+.contact-right {
+  width: 100%;
+  max-width: 100%;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body, .contact-wrapper {
+  overflow-x: hidden;
+}
+.contact-info-item {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (min-width: 640px) {
+  .contact-info-item {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+/* Contact Page CSS */
+.contact-wrapper {
+  font-family: 'Poppins', sans-serif;
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }

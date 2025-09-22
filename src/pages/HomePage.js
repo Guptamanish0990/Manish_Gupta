@@ -1,12 +1,14 @@
 // src/pages/HomePage.js
-import React from 'react';
+//import React from 'react';
 import './HomePage.css';
 import profile from '../assets/professional-developer.png';
 import Typewriter from 'typewriter-effect';
 import { motion } from 'framer-motion';
 import { FaHandPeace } from 'react-icons/fa'; // Place this at the top of your file
-import { FaReact } from 'react-icons/fa'; // Importing React icon
-import { FaWordpress} from 'react-icons/fa'; // Importing social media icons
+//import { FaReact } from 'react-icons/fa'; // Importing React icon
+//import { FaWordpress} from 'react-icons/fa'; // Importing social media icons
+import { Link } from 'react-router-dom'; // ✅ Add at the top of your file
+//import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaFacebook } from 'react-icons/fa'; // Importing social media icons
 export default function HomePage() {
   return (
     <section className="split-hero">
@@ -68,30 +70,22 @@ export default function HomePage() {
         >
          
           As a skilled frontend developer, I am dedicated to turning ideas into innovative web applications.
-          Explore my latest projects and articles, showcasing my expertise in <span className="inline-flex items-center gap-1"><FaReact style={{ color: '#61DBFB' }} /></span><strong>React.js</strong>,&nbsp;<span className="inline-flex items-center gap-1"><FaWordpress style={{ color: '#21759B' }} /></span><strong>WordPress</strong> and web development.
+          Explore my latest projects and articles, showcasing my expertise in {/*<span className="inline-flex items-center gap-1"><FaReact style={{ color: '#61DBFB' }} /></span>*/}<strong>React.js</strong>,&nbsp;{/*<span className="inline-flex items-center gap-1"><FaWordpress style={{ color: '#21759B' }} /></span>*/}<strong>WordPress</strong> and web development.
         </motion.p>
 
-        <motion.div
-          className="project-contact-buttons"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-        >
-          <a
-            href="http://localhost:3000/projects"
-            className="view-projects"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            My Projects
-          </a>
-          <a
-            href="http://localhost:3000/contact"
-            className="contact-me"
-          >
-            Contact Me
-          </a>
-        </motion.div>
+     <motion.div
+  className="project-contact-buttons"
+  initial={{ opacity: 0, y: 10 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.8 }}
+>
+  <Link to="/projects" className="view-projects">
+    My Projects
+  </Link>
+  <Link to="/contact" className="contact-me">
+    Contact Me
+  </Link>
+</motion.div>
 
         <motion.div
           className="social-icons flex gap-4 text-2xl mt-4"
@@ -99,7 +93,7 @@ export default function HomePage() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9 }}
         >
-          <a
+        {/*}  <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=websitedeveloper0990@gmail.com"
             className="email border border-black rounded-md p-3 hover:bg-gray-100 transition"
             title="Email"
@@ -150,7 +144,7 @@ export default function HomePage() {
             title="Facebook"
           >
             <i className="fab fa-facebook-f"></i>
-          </a>
+          </a>*/}
         </motion.div>
       </motion.div>
 

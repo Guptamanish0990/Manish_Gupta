@@ -158,19 +158,22 @@
 }
 
 .about-img {
-  flex: 1 1 200px;
-  max-width: 240px;
+    flex: 0 0 260px;
+    max-width: 275px;
+    padding-top: 47px;
 }
 
 .about-img img {
-  width: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 5px solid #eee;
+    width: 110%;
+    border-radius: 30%;
+    object-fit: cover;
+    border: 5px solid #eee;
 }
+
 
 .about-info {
   flex: 2 1 500px;
+  text-align: justify;
 }
 
 .about-info h3 {
@@ -780,7 +783,7 @@ i, svg {
 
 .edu-timeline {
   position: relative;
-  padding-left: 40px;
+  padding-left: 44px;
 }
 
 .edu-timeline::before {
@@ -845,4 +848,43 @@ i, svg {
   margin-top: 5px;
   color: #374151;
   font-size: 0.95rem;
+}
+.responsive-heading {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: var(--text-dark); /* Or use #111 */
+  margin-bottom: 4rem;
+  font-size: 5rem; /* Default size */
+
+  /* Responsive scaling */
+}
+
+@media (max-width: 1024px) {
+  .responsive-heading {
+    font-size: 4.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-heading {
+    font-size: 3.70rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .responsive-heading {
+    font-size: 2.0rem;
+  }
+}
+
+.about-info-heading {
+  color: #dc2626; /* Tailwind's red-600 */
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
 }

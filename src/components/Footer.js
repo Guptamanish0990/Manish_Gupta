@@ -1,6 +1,6 @@
 // src/components/Footer.jsx
 import React from "react";
-import { FaHeart, FaGithub, FaLinkedin,FaWhatsapp } from "react-icons/fa";
+import { FaHeart, FaGithub, FaLinkedin,/*FaWhatsapp*/ } from "react-icons/fa";
 import "./Footer.css";
 
 export default function Footer() {
@@ -30,9 +30,9 @@ export default function Footer() {
   className="footer-icon-link linkedin-icon"
 >
   <FaLinkedin />
-</a>
+          </a>
 
-            <a
+           {/* <a
             href="https://wa.me/919372232566"
             target="_blank"
             rel="noopener noreferrer"
@@ -40,7 +40,7 @@ export default function Footer() {
             className="text-dark text-xl hover:text-green-600 hover:scale-125 transition-transform duration-300"
           >
             <FaWhatsapp />
-          </a>
+          </a>*/}
           </div>
         </div>
         <p className="footer-credit">

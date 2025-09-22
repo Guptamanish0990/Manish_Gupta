@@ -54,14 +54,15 @@ export default function Navbar() {
 </ul>
 
 <div className="navbar-right">
-  <a
-    href="/skills/Manish-gupta%202025.pdf"
-    download="Manish-Gupta-Resume.pdf"
-    className="resume-btn hoverable"
-    onClick={() => setMenuOpen(false)} // 👈 Add this line
-  >
-    Resume <span className="icon">⚡</span>
-  </a>
+ <a
+  href={`${process.env.PUBLIC_URL}/Manish-Gupta-Resume.pdf`}
+  download="Manish-Gupta-Resume.pdf"
+  className="resume-btn hoverable"
+  onClick={() => setMenuOpen(false)}
+>
+  Resume <span className="icon">⚡</span>
+</a>
+
 </div>
 
         </div>
