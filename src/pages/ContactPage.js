@@ -1,7 +1,7 @@
 // src/pages/Contact.js
+import React, { useState } from 'react';
 import './Contact.css';
-//import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaGithub } from 'react-icons/fa';
-import { PiMapPinBold, PiAtBold, PiPhoneBold } from 'react-icons/pi';
+import { PiMapPinBold, PiAtBold } from 'react-icons/pi';
 import { motion } from 'framer-motion';
 
 const fadeLeft = {
@@ -14,117 +14,154 @@ const fadeRight = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' } }
 };
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
+};
+
 export default function Contact() {
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const [formHovered, setFormHovered] = useState(false);
+
   return (
-    <motion.div className="contact-wrapper" initial="hidden" animate="visible">
-      <div className="contact-container">
-        <motion.div className="contact-left" variants={fadeLeft}>
-          <h2 className="contact-title">We'd love to talk about how we can help you.</h2>
-          <p className="contact-description">
-            If you have any questions or would like to discuss a project, please feel free to reach out. You can contact me via email, phone, or by filling out the form below. I look forward to hearing from you!
-          </p>
+    <div className="contact-3d-wrapper">
+      {/* Animated Background */}
+      <div className="contact-bg-animation">
+        <div className="contact-bg-circle contact-bg-circle-1"></div>
+        <div className="contact-bg-circle contact-bg-circle-2"></div>
+        <div className="contact-bg-circle contact-bg-circle-3"></div>
+      </div>
 
-          <div className="contact-info-box">
-            <div className="contact-info-item">
-              <div className="icon-box">
-                <PiMapPinBold className="icon" />
-              </div>
-              <div>
-                <p className="info-label">Address:</p>
-                <a
-                  href="https://www.google.com/maps/place/Filmcity+Road,+Goregaon+East,+Mumbai,+Maharashtra+400065"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="info-value map-link"
-                >
-                  Filmcity Road, Goregaon East,<br />
-                  Maharashtra, Mumbai 400065
-                </a>
-              </div>
-            </div>
-
-            <div className="contact-info-item bg-gray-300 p-4 rounded-xl flex flex-col sm:flex-row sm:items-center sm:gap-4 w-full max-w-md">
-              <div className="icon-box bg-white rounded-full p-2 w-10 h-10 flex items-center justify-center mb-2 sm:mb-0">
-                <PiAtBold className="icon text-black text-xl" />
-              </div>
-              <div className="flex-1 overflow-hidden">
-                <p className="info-label text-gray-600 font-medium text-sm">My Email:</p>
-                <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=websitedeveloper0990@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="email-link text-black hover:text-gray-800 font-semibold underline">
-                  websitedeveloper0990@gmail.com
-                </a>
-              </div>
-            </div>
-
-            <div className="contact-info-item">
-              <div className="icon-box">
-                <PiPhoneBold className="icon" />
-              </div>
-              <div>
-                <p className="info-label">Call Me Now:</p>
-                <a href="tel:+919372232566" className="info-value phone-number">
-                  +91 9372232566
-                </a>
-              </div>
-            </div>
+      <motion.div 
+        className="contact-container-3d" 
+        initial="hidden" 
+        animate="visible"
+      >
+        {/* Left Section */}
+        <motion.div 
+          className="contact-left-3d" 
+          variants={fadeLeft}
+        >
+          {/* Header */}
+          <div className="contact-header-3d">
+            <motion.h2 
+              className="contact-title-3d"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              Let's Build Something Amazing Together
+            </motion.h2>
+            <motion.p 
+              className="contact-description-3d"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              Ready to bring your ideas to life? Whether it's a website, web app, or digital experience, 
+              I'm here to help turn your vision into reality. Let's discuss your project!
+            </motion.p>
           </div>
 
-          {/*<div className="social-icons flex gap-4 text-2xl mt-4">
-            <a href="https://www.facebook.com/Guptamanish0990/" className="facebook" target="_blank" rel="noopener noreferrer">
-              <FaFacebookF />
-            </a>
-            <a href="https://x.com/GuptaManish0990" className="twitter" target="_blank" rel="noopener noreferrer">
-              <FaTwitter />
-            </a>
-            <a href="https://www.instagram.com/0990_manish?igsh=MWR0NWV3N2tteDlzbg==" className="instagram" target="_blank" rel="noopener noreferrer">
-              <FaInstagram />
-            </a>
-            <a href="https://www.linkedin.com/in/manish-gupta93722/" className="linkedin" target="_blank" rel="noopener noreferrer">
-              <FaLinkedinIn />
-            </a>
-            <a href="https://github.com/Guptamanish0990" className="github" target="_blank" rel="noopener noreferrer">
-              <FaGithub />
-            </a>
-          </div>*/}
+          {/* Contact Info Cards - Simplified */}
+          <div className="contact-info-grid">
+            {/* Location Card */}
+            <motion.div 
+              className={`contact-card-3d ${hoveredCard === 0 ? 'hovered' : ''}`}
+              variants={fadeUp}
+              onMouseEnter={() => setHoveredCard(0)}
+              onMouseLeave={() => setHoveredCard(null)}
+            >
+              <div className="card-glow gradient-purple"></div>
+              <div className="card-content-3d">
+                <div className="icon-wrapper-3d gradient-purple">
+                  <PiMapPinBold className="contact-icon-3d" />
+                </div>
+                <div className="card-text">
+                  <p className="card-label">Based In:</p>
+                  <a
+                    href="https://maps.app.goo.gl/aE4pojMaBDpqSx7m8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="card-value map-link-3d"
+                  >
+                    Mumbai, India
+                  </a>
+                </div>
+              </div>
+              <div className="card-float-element card-float-1"></div>
+            </motion.div>
+
+            {/* Email Card */}
+            <motion.div 
+              className={`contact-card-3d ${hoveredCard === 1 ? 'hovered' : ''}`}
+              variants={fadeUp}
+              transition={{ delay: 0.1 }}
+              onMouseEnter={() => setHoveredCard(1)}
+              onMouseLeave={() => setHoveredCard(null)}
+            >
+              <div className="card-glow gradient-cyan"></div>
+              <div className="card-content-3d">
+                <div className="icon-wrapper-3d gradient-cyan">
+                  <PiAtBold className="contact-icon-3d" />
+                </div>
+                <div className="card-text">
+                  <p className="card-label">Email Me At:</p>
+                  <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=websitedeveloper0990@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="card-value email-link-3d"
+                  >
+                    websitedeveloper0990@gmail.com
+                  </a>
+                </div>
+              </div>
+              <div className="card-float-element card-float-2"></div>
+            </motion.div>
+          </div>
         </motion.div>
 
-        <motion.div className="contact-right" variants={fadeRight}>
-          <h2>Fill in the form</h2>
-          <form action="https://formspree.io/f/mrbkywka" method="POST">
-            <div className="form-grid">
-              <div className="form-group">
-                <label htmlFor="first-name">First Name</label>
-                <input type="text" id="first-name" name="first-name" required />
+        {/* Right Section - Simplified Form */}
+        <motion.div 
+          className={`contact-right-3d ${formHovered ? 'form-hovered' : ''}`}
+          variants={fadeRight}
+          onMouseEnter={() => setFormHovered(true)}
+          onMouseLeave={() => setFormHovered(false)}
+        >
+          <div className="form-glow"></div>
+          <div className="form-container-3d">
+            <h2 className="form-title-3d">Send Me a Message</h2>
+            
+            <form action="https://formspree.io/f/mrbkywka" method="POST">
+              {/* Simplified Form Fields */}
+              <div className="form-group-3d full-width">
+                <label htmlFor="name">Your Name</label>
+                <input type="text" id="name" name="name" required />
               </div>
-              <div className="form-group">
-                <label htmlFor="last-name">Last Name</label>
-                <input type="text" id="last-name" name="last-name" required />
-              </div>
-            </div>
 
-            <div className="form-grid">
-              <div className="form-group">
-                <label htmlFor="email">Email</label>
+              <div className="form-group-3d full-width">
+                <label htmlFor="email">Your Email</label>
                 <input type="email" id="email" name="email" required />
               </div>
-              <div className="form-group">
-                <label htmlFor="phone">Phone Number</label>
-                <input type="text" id="phone" name="phone" />
+
+              <div className="form-group-3d full-width">
+                <label htmlFor="message">Your Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
               </div>
-            </div>
 
-            <div className="form-group">
-              <label htmlFor="details">Message</label>
-              <textarea id="details" name="details" rows="4"></textarea>
-            </div>
+              <button type="submit" className="submit-button-3d">
+                <span>Send Message</span>
+                <span className="submit-icon">⚡</span>
+              </button>
+            </form>
+          </div>
 
-            <button type="submit" className="submit-button">Send⚡</button>
-          </form>
+          {/* Floating Decorative Elements */}
+          <div className="form-float-element form-float-1"></div>
+          <div className="form-float-element form-float-2"></div>
         </motion.div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 }

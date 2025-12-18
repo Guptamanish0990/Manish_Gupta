@@ -1,23 +1,24 @@
-// src/pages/AboutPage.js
 import './AboutPage.css';
-import profile from '../assets/About-Animation.gif'; // ✅ updated path for your GIF
-//import { FaReact, FaHtml5, FaCss3Alt, FaJs, /*FaPython,*/ FaGithub, FaWordpress, FaGitAlt } from "react-icons/fa";
-//import { SiWoocommerce, /*SiDjango, SiPostman*/ } from "react-icons/si";
-//import { FaBootstrap } from "react-icons/fa";
+import MultiScreenSetup from '../components/MultiScreenSetup';
 import { motion } from 'framer-motion';
 
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (i) => ({
+// Animation Variants
+const fadeIn = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      delay: i * 0.2,
-      duration: 0.6,
-      ease: 'easeOut'
-    }
-  }),
+    transition: { duration: 0.8, ease: 'easeOut' }
+  }
+};
+
+const slideIn = {
+  hidden: { opacity: 0, x: -50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: 'easeOut' }
+  }
 };
 
 const skillVariants = {
@@ -26,46 +27,79 @@ const skillVariants = {
     opacity: 1,
     scale: 1,
     transition: {
-      delay: i * 0.1,
-      duration: 0.4,
+      delay: i * 0.08,
+      duration: 0.5,
+      ease: [0.175, 0.885, 0.32, 1.275]
+    }
+  })
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -30 },
+  visible: (i) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: i * 0.15,
+      duration: 0.6,
       ease: 'easeOut'
     }
   })
 };
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: 'easeOut' }
-  }
-};
-
 
 export default function AboutPage() {
-   const educationData = [
-    { year: '2021 – 2023', degree: 'Master of Science in Information Technology', institution: 'Patkar-Varde College, Mumbai' },
-    { year: '2018 – 2021', degree: 'Bachelor of Science in Information Technology', institution: 'DTSS College of Commerce and Science, Mumbai' },
-    { year: '2017 – 2018', degree: 'HSC (Science)', institution: 'DTSS College of Commerce and Science, Mumbai, Malad' },
-    { year: '2015 – 2016', degree: 'SSC', institution: 'Shree Radha Krishna Vidya Mandir High School, Mumbai' }
+  // Education Data
+  const educationData = [
+    { 
+      year: '2021 – 2023', 
+      degree: 'Master of Science in Information Technology', 
+      institution: 'Patkar-Varde College, Mumbai' 
+    },
+    { 
+      year: '2018 – 2021', 
+      degree: 'Bachelor of Science in Information Technology', 
+      institution: 'DTSS College of Commerce and Science, Mumbai' 
+    },
+    { 
+      year: '2017 – 2018', 
+      degree: 'HSC (Science)', 
+      institution: 'DTSS College of Commerce and Science, Mumbai, Malad' 
+    },
+    { 
+      year: '2015 – 2016', 
+      degree: 'SSC', 
+      institution: 'Shree Radha Krishna Vidya Mandir High School, Mumbai' 
+    }
   ];
 
- const skills = [
-  { name: "HTML5", icon: `${process.env.PUBLIC_URL}/skills/html-icon.png` },
-  { name: "CSS3", icon: `${process.env.PUBLIC_URL}/skills/css-icons.png` },
-  { name: "JavaScript", icon: `${process.env.PUBLIC_URL}/skills/javascript-icon.png` },
-  //{ name: "Python", icon: `${process.env.PUBLIC_URL}/skills/python-icon.png` },
-  //{ name: "MySQL", icon: `${process.env.PUBLIC_URL}/skills/mySql-icon.png` },
-  { name: "WooCommerce", icon: `${process.env.PUBLIC_URL}/skills/woocommerce-icon.png` },
-  { name: "ChatGPT", icon: `${process.env.PUBLIC_URL}/skills/ChatGPT_logo.svg.webp` },
-  { name: "React.js", icon: `${process.env.PUBLIC_URL}/skills/Reactjs_icon.png` },
-  { name: "Bootstrap", icon: `${process.env.PUBLIC_URL}/skills/Bootstrap-icon.png` },
-  { name: "Tailwind", icon: `${process.env.PUBLIC_URL}/skills/Tailwind-css-icon.png` },
-  { name: "GitHub", icon: `${process.env.PUBLIC_URL}/skills/Github-icon.png` },
-  { name: "WordPress", icon: `${process.env.PUBLIC_URL}/skills/Wordpress-icon.png` }
-  
-];
+  // Skills Data - Using Now
+  const currentSkills = [
+    { name: "HTML5", icon: `${process.env.PUBLIC_URL}/skills/html-icon.png` },
+    { name: "CSS3", icon: `${process.env.PUBLIC_URL}/skills/css-icons.png` },
+    { name: "JavaScript", icon: `${process.env.PUBLIC_URL}/skills/javascript-icon.png` },
+    { name: "React.js", icon: `${process.env.PUBLIC_URL}/skills/Reactjs_icon.png` },
+    { name: "Bootstrap", icon: `${process.env.PUBLIC_URL}/skills/Bootstrap-icon.png` },
+    { name: "Tailwind", icon: `${process.env.PUBLIC_URL}/skills/Tailwind-css-icon.png` },
+    { name: "WordPress", icon: `${process.env.PUBLIC_URL}/skills/Wordpress-icon.png` },
+    { name: "WooCommerce", icon: `${process.env.PUBLIC_URL}/skills/woocommerce-icon.png` },
+    { name: "GitHub", icon: `${process.env.PUBLIC_URL}/skills/Github-icon.png` },
+    { name: "ChatGPT", icon: `${process.env.PUBLIC_URL}/skills/ChatGPT_logo.svg.webp` },
+    { name: "Canva", icon: `${process.env.PUBLIC_URL}/skills/canva-icon.png` }
+  ];
 
+  // Skills Data - Learning Now
+  const learningSkills = [
+    { name: "Next.js", icon: `${process.env.PUBLIC_URL}/skills/Nextjs-icons.png` },
+    { name: "Django", icon: `${process.env.PUBLIC_URL}/skills/django-icon.png` },
+    { name: "MySQL", icon: `${process.env.PUBLIC_URL}/skills/mySql-icon.png` }
+  ];
+
+  // Skills Data - Other Tools
+  const otherTools = [
+    { name: "VS Code", icon: `${process.env.PUBLIC_URL}/skills/vs-Code-icon.png` },
+    { name: "GitHub", icon: `${process.env.PUBLIC_URL}/skills/Github-icon.png` },
+    { name: "Git", icon: `${process.env.PUBLIC_URL}/skills/Git-icon.png` }
+  ];
 
   return (
     <motion.div
@@ -74,96 +108,89 @@ export default function AboutPage() {
       animate="visible"
       variants={fadeIn}
     >
-      {/* Passion Fuels Purpose Header */}
-  <motion.h1
-  className="responsive-heading"
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  variants={fadeIn}
->
-  <span className="inline-block">Inspired&nbsp;</span>
-  <span className="inline-block">by&nbsp;</span>
-  <span className="inline-block">Curiosity</span>
-</motion.h1>
+      {/* Main Heading */}
+      <motion.h1
+        className="responsive-heading"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeIn}
+      >
+        <span className="inline-block">Inspired&nbsp;</span>
+        <span className="inline-block">by&nbsp;</span>
+        <span className="inline-block">Curiosity</span>
+      </motion.h1>
 
-     {/*<motion.h2 className="about-heading text-4xl font-bold text-center mb-6 text-red-600 uppercase">Biography</motion.h2>*/}
-
-<motion.div className="about-content flex flex-col lg:flex-row items-center gap-10 my-10 px-4 lg:px-20">
-  {/* Left: Profile Image */}
-  <motion.div
-  className="about-img w-full lg:w-1/2"
-  initial="hidden"
-  whileInView="visible"
-  variants={fadeIn}
->
-  <img
-    src={profile}
-    alt="About Animation of Manish Gupta"
-    className="rounded-lg shadow-lg w-full max-w-md mx-auto"
-  />
-</motion.div>
-
-
-  {/* Right: About Content */}
-  <motion.div
-  className="about-info w-full lg:w-1/2 space-y-6 text-gray-800 text-base sm:text-lg leading-relaxed"
-  initial="hidden"
-  whileInView="visible"
-  variants={fadeIn}
->
-  <h2 className="about-info-heading">About Me</h2>
-
-    
-    <p>Hi, I'm <strong>Manish</strong>, a frontend developer and web designer with hands-on experience in building clean, modern, and user-focused digital experiences.</p>
-
-    <p>I’ve worked professionally at <a href="https://www.zencraft.in" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">Zencraft Consultancy Pvt. Ltd.</a> for over a year, where I specialized in creating responsive websites that feel intuitive and engaging.</p>
-
-    <p>I believe web design is more than just how things look — it's about solving problems and delivering seamless, enjoyable journeys for users.</p>
-
-    <p>Whether it's a business website, an online store, or a creative portfolio, I bring a thoughtful approach, design sensibility, and attention to detail to everything I create.</p>
-
-    <p>I’m always exploring new ideas, experimenting with smart tools, and refining my process to deliver better and faster results.</p>
-
-    <p>I look forward to working together and turning your ideas into powerful web experiences that truly connect with your audience.</p>
-
-
-  </motion.div>
-</motion.div>
-
-
-{/*
-       <motion.div className="about-content flex flex-col md:flex-row items-center gap-8">
-        <motion.div className="about-img w-full md:w-1/2" initial="hidden" whileInView="visible" variants={fadeIn}>
-          <img src={profile} alt="Manish Gupta" className="rounded-lg shadow-lg" />
+      {/* About Content Section */}
+      <motion.div 
+        className="about-content"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeIn}
+      >
+        {/* MultiScreen Setup Component */}
+        <motion.div
+          className="about-img"
+          variants={slideIn}
+        >
+          <MultiScreenSetup />
         </motion.div>
 
-       {/*} <motion.div className="about-info w-full md:w-1/2 space-y-6" initial="hidden" whileInView="visible" variants={fadeIn}>
+        {/* About Info */}
+        <motion.div
+          className="about-info"
+          variants={fadeIn}
+        >
+          <h2 className="about-info-heading">About Me</h2>
 
-          <div className="about-details grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <ul>
-              <li><strong>Address:</strong> Goregaon East, FilmCity Road</li>
-              <li><strong>Phone:</strong> +91 93722325**</li>
-              <li><strong>City:</strong> Mumbai, India</li>
-            </ul>
-            <ul>
-              <li><strong>Degree:</strong> Post Graduation</li>
-              <li><strong>Email:</strong> websitedeveloper0990@gmail.com</li>
-              <li><strong>Freelance:</strong> Available</li>
-            </ul>
-          </div>
+          <p>
+            Hi, I'm <strong>Manish</strong>. I'm a frontend developer and web designer who's passionate about creating digital experiences that actually work for people.
+          </p>
 
-          
+          <p>
+            I've spent the past <strong>1+ years</strong> at{' '}
+            <a href="https://zencraft.io/" target="_blank" rel="noopener noreferrer">
+              Zencraft Consultancy Pvt. Ltd.
+            </a>{' '}
+            building responsive websites that don't just look good they feel right to use. Working with different clients really showed me that good design isn't about fancy visuals; it's about figuring out what people actually need and making it easy for them.
+          </p>
+
+          <p>
+            Here's what I believe: if a design doesn't solve a real problem, it's not doing its job. I want anyone visiting a site I've built to feel like they've found exactly what they're looking for, without any frustration.
+          </p>
+
+          <p>
+            Whether it's a business website, online store, or portfolio, I pour the same careful thought and attention to detail into every project. I'm always learning and tweaking my approach because in our field, standing still means falling behind.
+          </p>
+
+          <p>
+            Like what you're reading? I'd love to hear about what you're building. Let's create something that your audience will genuinely appreciate.
+          </p>
         </motion.div>
-       </motion.div>
+      </motion.div>
 
-        {/* Skills Section with Animation */}
-        <section className="skills-section px-4 py-10">
-        <h2 className="text-3xl font-bold text-center mb-8">My Skills <span>✏️</span></h2>
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <h3 className="text-xl font-semibold border-b pb-2 mb-4">USING NOW:</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 text-center">
-            {skills.map((skill, idx) => (
+      {/* Skills Section */}
+      <section className="skills-section">
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeIn}
+        >
+          My Skills <span>✏️</span>
+        </motion.h2>
+
+        {/* Current Skills */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeIn}
+        >
+          <h3>USING NOW:</h3>
+          <div className="grid">
+            {currentSkills.map((skill, idx) => (
               <motion.div
                 key={idx}
                 custom={idx}
@@ -172,81 +199,99 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 variants={skillVariants}
               >
-                <img src={skill.icon} alt={skill.name} className="mx-auto w-12" />
+                <img src={skill.icon} alt={skill.name} />
                 <p>{skill.name}</p>
               </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-  <h3 className="text-xl font-semibold border-b pb-2 mb-4">LEARNING NOW:</h3>
-  <div className="grid grid-cols-2 md:grid-cols-6 gap-6 text-center">
-    <motion.div custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={skillVariants}>
-      <img src={`${process.env.PUBLIC_URL}/skills/Nextjs-icons.png`} alt="Next.js" className="mx-auto w-12" />
-      <p>Next.js</p>
-    </motion.div>
-    <motion.div custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={skillVariants}>
-      <img src={`${process.env.PUBLIC_URL}/skills/django-icon.png`} alt="Django" className="mx-auto w-12" />
-      <p>Django</p>
-    </motion.div>
-    <motion.div custom={2} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={skillVariants}>
-      <img src={`${process.env.PUBLIC_URL}/skills/mySql-icon.png`} alt="Flask" className="mx-auto w-12" />
-      <p>MySQL</p>
-    </motion.div>
-  </div>
-</div>
+        {/* Learning Skills */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeIn}
+        >
+          <h3>LEARNING NOW:</h3>
+          <div className="grid">
+            {learningSkills.map((skill, idx) => (
+              <motion.div
+                key={idx}
+                custom={idx}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={skillVariants}
+              >
+                <img src={skill.icon} alt={skill.name} />
+                <p>{skill.name}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
-<div className="bg-white rounded-lg shadow-md p-6">
-  <h3 className="text-xl font-semibold border-b pb-2 mb-4">Other</h3>
-  <div className="grid grid-cols-2 md:grid-cols-6 gap-6 text-center">
-    <motion.div custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={skillVariants}>
-      <img src={`${process.env.PUBLIC_URL}/skills/vs-Code-icon.png`} alt="VS Code" className="mx-auto w-12" />
-      <p>VS Code</p>
-    </motion.div>
-    <motion.div custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={skillVariants}>
-      <img src={`${process.env.PUBLIC_URL}/skills/Github-icon.png`} alt="GitHub" className="mx-auto w-12" />
-      <p>GitHub</p>
-    </motion.div>
-    <motion.div custom={2} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={skillVariants}>
-      <img src={`${process.env.PUBLIC_URL}/skills/Git-icon.png`} alt="Git" className="mx-auto w-12" />
-      <p>Git</p>
-    </motion.div>
-  </div>
-</div>
+        {/* Other Tools */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeIn}
+        >
+          <h3>OTHER TOOLS:</h3>
+          <div className="grid">
+            {otherTools.map((tool, idx) => (
+              <motion.div
+                key={idx}
+                custom={idx}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={skillVariants}
+              >
+                <img src={tool.icon} alt={tool.name} />
+                <p>{tool.name}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
 
-        
-        </section>
-
-       {/* Education Section */}
+      {/* Education Section */}
       <div className="education-section">
-        <h2 className="edu-title text-3xl font-bold text-center mb-10">🎓 My Education</h2>
-        <div className="edu-timeline space-y-8">
+        <motion.h2
+          className="edu-title"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeIn}
+        >
+          🎓 My Education
+        </motion.h2>
+
+        <div className="edu-timeline">
           {educationData.map((edu, idx) => (
             <motion.div
-              className="edu-item relative pl-6 border-l-4 border-blue-500"
+              className="edu-item"
               key={idx}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.5 }}
               custom={idx}
               variants={itemVariants}
             >
-              <div className="edu-dot w-4 h-4 bg-blue-500 rounded-full absolute -left-2 top-1.5"></div>
-              <div className="edu-content bg-white shadow-md p-4 rounded-md">
-                <div className="edu-header flex justify-between items-center mb-2">
-                  <h3 className="edu-degree font-semibold text-blue-700">{edu.degree}</h3>
-                  <span className="edu-year text-sm text-gray-500">{edu.year}</span>
+              <div className="edu-dot"></div>
+              <div className="edu-content">
+                <div className="edu-header">
+                  <h3 className="edu-degree">{edu.degree}</h3>
+                  <span className="edu-year">{edu.year}</span>
                 </div>
-                <p className="edu-institution text-gray-700">{edu.institution}</p>
+                <p className="edu-institution">{edu.institution}</p>
               </div>
-              
-              </motion.div>
+            </motion.div>
           ))}
         </div>
       </div>
-      
     </motion.div>
-
   );
 }

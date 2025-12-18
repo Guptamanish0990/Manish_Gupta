@@ -16,3 +16,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* ===== Global Page Background Fix ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  /* or a solid dark color */
+  /* background: #0b0f19; */
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* To ensure the navbar inherits the theme properly */
+#root {
+  background: inherit;
+}
