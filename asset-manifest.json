@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Manish_Gupta/static/css/main.e7e4178f.css",
-    "main.js": "/Manish_Gupta/static/js/main.49d81286.js",
+    "main.css": "/Manish_Gupta/static/css/main.04ec6870.css",
+    "main.js": "/Manish_Gupta/static/js/main.ad4e4c46.js",
     "static/js/453.acca0757.chunk.js": "/Manish_Gupta/static/js/453.acca0757.chunk.js",
     "static/media/youtube-clone-vercel.png": "/Manish_Gupta/static/media/youtube-clone-vercel.86daea3f05e25b522f8a.png",
     "static/media/woocommerce Website.png": "/Manish_Gupta/static/media/woocommerce Website.baf082df6e953296e1d9.png",
@@ -19,12 +19,12 @@
     "static/media/Jainandco-webperfecto.png": "/Manish_Gupta/static/media/Jainandco-webperfecto.92b74d10d7183ad23218.png",
     "static/media/MLGUI -Tool.jpg": "/Manish_Gupta/static/media/MLGUI -Tool.ddf2530f672a01a3571f.jpg",
     "index.html": "/Manish_Gupta/index.html",
-    "main.e7e4178f.css.map": "/Manish_Gupta/static/css/main.e7e4178f.css.map",
-    "main.49d81286.js.map": "/Manish_Gupta/static/js/main.49d81286.js.map",
+    "main.04ec6870.css.map": "/Manish_Gupta/static/css/main.04ec6870.css.map",
+    "main.ad4e4c46.js.map": "/Manish_Gupta/static/js/main.ad4e4c46.js.map",
     "453.acca0757.chunk.js.map": "/Manish_Gupta/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e7e4178f.css",
-    "static/js/main.49d81286.js"
+    "static/css/main.04ec6870.css",
+    "static/js/main.ad4e4c46.js"
   ]
 }
