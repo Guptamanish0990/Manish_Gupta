@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Manish_Gupta/static/css/main.b1e8d548.css",
-    "main.js": "/Manish_Gupta/static/js/main.f56421e9.js",
+    "main.css": "/Manish_Gupta/static/css/main.58b2719f.css",
+    "main.js": "/Manish_Gupta/static/js/main.a8e83586.js",
     "static/js/453.acca0757.chunk.js": "/Manish_Gupta/static/js/453.acca0757.chunk.js",
     "static/media/youtube-clone-vercel.png": "/Manish_Gupta/static/media/youtube-clone-vercel.86daea3f05e25b522f8a.png",
     "static/media/woocommerce Website.png": "/Manish_Gupta/static/media/woocommerce Website.baf082df6e953296e1d9.png",
@@ -18,14 +18,15 @@
     "static/media/MH-logo.png": "/Manish_Gupta/static/media/MH-logo.e7ea1ef629b0c3f3daea.png",
     "static/media/Jainandco-webperfecto.png": "/Manish_Gupta/static/media/Jainandco-webperfecto.92b74d10d7183ad23218.png",
     "static/media/MLGUI -Tool.jpg": "/Manish_Gupta/static/media/MLGUI -Tool.ddf2530f672a01a3571f.jpg",
+    "static/media/Debug_QuestImg.png": "/Manish_Gupta/static/media/Debug_QuestImg.f798403b6444cb36815d.png",
     "static/media/Manish_GuptaResume.pdf": "/Manish_Gupta/static/media/Manish_GuptaResume.277937fc8e6868608598.pdf",
     "index.html": "/Manish_Gupta/index.html",
-    "main.b1e8d548.css.map": "/Manish_Gupta/static/css/main.b1e8d548.css.map",
-    "main.f56421e9.js.map": "/Manish_Gupta/static/js/main.f56421e9.js.map",
+    "main.58b2719f.css.map": "/Manish_Gupta/static/css/main.58b2719f.css.map",
+    "main.a8e83586.js.map": "/Manish_Gupta/static/js/main.a8e83586.js.map",
     "453.acca0757.chunk.js.map": "/Manish_Gupta/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b1e8d548.css",
-    "static/js/main.f56421e9.js"
+    "static/css/main.58b2719f.css",
+    "static/js/main.a8e83586.js"
   ]
 }
