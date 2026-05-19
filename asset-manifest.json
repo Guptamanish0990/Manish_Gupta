@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Manish_Gupta/static/css/main.587163b2.css",
-    "main.js": "/Manish_Gupta/static/js/main.cc6a3e2f.js",
+    "main.css": "/Manish_Gupta/static/css/main.314a71da.css",
+    "main.js": "/Manish_Gupta/static/js/main.e0adf04b.js",
     "static/media/youtube-clone-vercel.png": "/Manish_Gupta/static/media/youtube-clone-vercel.86daea3f05e25b522f8a.png",
     "static/media/drbhavsarsdentalcare4kidsin_webperfecto.png": "/Manish_Gupta/static/media/drbhavsarsdentalcare4kidsin_webperfecto.f2186fdc07db0c63cd47.png",
     "static/media/LaxStoreImg.png": "/Manish_Gupta/static/media/LaxStoreImg.ba243c0a249852a24b81.png",
@@ -13,12 +13,13 @@
     "static/media/DC Motor Control via Mobile.png": "/Manish_Gupta/static/media/DC Motor Control via Mobile.cd58e4d7820b48207a49.png",
     "static/media/Jainandco-webperfecto.png": "/Manish_Gupta/static/media/Jainandco-webperfecto.92b74d10d7183ad23218.png",
     "static/media/MLGUI -Tool.jpg": "/Manish_Gupta/static/media/MLGUI -Tool.ddf2530f672a01a3571f.jpg",
+    "static/media/photo.jpg": "/Manish_Gupta/static/media/photo.0c46cb20606309c90fac.jpg",
     "index.html": "/Manish_Gupta/index.html",
-    "main.587163b2.css.map": "/Manish_Gupta/static/css/main.587163b2.css.map",
-    "main.cc6a3e2f.js.map": "/Manish_Gupta/static/js/main.cc6a3e2f.js.map"
+    "main.314a71da.css.map": "/Manish_Gupta/static/css/main.314a71da.css.map",
+    "main.e0adf04b.js.map": "/Manish_Gupta/static/js/main.e0adf04b.js.map"
   },
   "entrypoints": [
-    "static/css/main.587163b2.css",
-    "static/js/main.cc6a3e2f.js"
+    "static/css/main.314a71da.css",
+    "static/js/main.e0adf04b.js"
   ]
 }
