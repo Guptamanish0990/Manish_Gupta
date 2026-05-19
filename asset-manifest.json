@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/Manish_Gupta/static/css/main.94902e40.css",
-    "main.js": "/Manish_Gupta/static/js/main.98ed3d69.js",
+    "main.css": "/Manish_Gupta/static/css/main.e1a174c1.css",
+    "main.js": "/Manish_Gupta/static/js/main.fc85da01.js",
+    "static/media/drbhavsarsdentalcare4kidsin_webperfecto.png": "/Manish_Gupta/static/media/drbhavsarsdentalcare4kidsin_webperfecto.f2186fdc07db0c63cd47.png",
+    "static/media/Hair_spa.png": "/Manish_Gupta/static/media/Hair_spa.c11a62496049a31c1f1d.png",
+    "static/media/Jainandco-webperfecto.png": "/Manish_Gupta/static/media/Jainandco-webperfecto.92b74d10d7183ad23218.png",
     "index.html": "/Manish_Gupta/index.html",
-    "main.94902e40.css.map": "/Manish_Gupta/static/css/main.94902e40.css.map",
-    "main.98ed3d69.js.map": "/Manish_Gupta/static/js/main.98ed3d69.js.map"
+    "main.e1a174c1.css.map": "/Manish_Gupta/static/css/main.e1a174c1.css.map",
+    "main.fc85da01.js.map": "/Manish_Gupta/static/js/main.fc85da01.js.map"
   },
   "entrypoints": [
-    "static/css/main.94902e40.css",
-    "static/js/main.98ed3d69.js"
+    "static/css/main.e1a174c1.css",
+    "static/js/main.fc85da01.js"
   ]
 }
