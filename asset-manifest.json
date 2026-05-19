@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Manish_Gupta/static/css/main.314a71da.css",
-    "main.js": "/Manish_Gupta/static/js/main.e0adf04b.js",
+    "main.css": "/Manish_Gupta/static/css/main.b86e6a49.css",
+    "main.js": "/Manish_Gupta/static/js/main.8389c85c.js",
     "static/media/youtube-clone-vercel.png": "/Manish_Gupta/static/media/youtube-clone-vercel.86daea3f05e25b522f8a.png",
     "static/media/drbhavsarsdentalcare4kidsin_webperfecto.png": "/Manish_Gupta/static/media/drbhavsarsdentalcare4kidsin_webperfecto.f2186fdc07db0c63cd47.png",
     "static/media/LaxStoreImg.png": "/Manish_Gupta/static/media/LaxStoreImg.ba243c0a249852a24b81.png",
@@ -15,11 +15,11 @@
     "static/media/MLGUI -Tool.jpg": "/Manish_Gupta/static/media/MLGUI -Tool.ddf2530f672a01a3571f.jpg",
     "static/media/photo.jpg": "/Manish_Gupta/static/media/photo.0c46cb20606309c90fac.jpg",
     "index.html": "/Manish_Gupta/index.html",
-    "main.314a71da.css.map": "/Manish_Gupta/static/css/main.314a71da.css.map",
-    "main.e0adf04b.js.map": "/Manish_Gupta/static/js/main.e0adf04b.js.map"
+    "main.b86e6a49.css.map": "/Manish_Gupta/static/css/main.b86e6a49.css.map",
+    "main.8389c85c.js.map": "/Manish_Gupta/static/js/main.8389c85c.js.map"
   },
   "entrypoints": [
-    "static/css/main.314a71da.css",
-    "static/js/main.e0adf04b.js"
+    "static/css/main.b86e6a49.css",
+    "static/js/main.8389c85c.js"
   ]
 }
