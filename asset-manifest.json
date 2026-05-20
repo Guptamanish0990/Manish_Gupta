@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Manish_Gupta/static/css/main.edd4e04c.css",
+    "main.css": "/Manish_Gupta/static/css/main.1fb6321d.css",
     "main.js": "/Manish_Gupta/static/js/main.392b6f31.js",
     "static/media/youtube-clone-vercel.png": "/Manish_Gupta/static/media/youtube-clone-vercel.86daea3f05e25b522f8a.png",
     "static/media/drbhavsarsdentalcare4kidsin_webperfecto.png": "/Manish_Gupta/static/media/drbhavsarsdentalcare4kidsin_webperfecto.f2186fdc07db0c63cd47.png",
@@ -15,11 +15,11 @@
     "static/media/MLGUI -Tool.jpg": "/Manish_Gupta/static/media/MLGUI -Tool.ddf2530f672a01a3571f.jpg",
     "static/media/photo.jpg": "/Manish_Gupta/static/media/photo.0c46cb20606309c90fac.jpg",
     "index.html": "/Manish_Gupta/index.html",
-    "main.edd4e04c.css.map": "/Manish_Gupta/static/css/main.edd4e04c.css.map",
+    "main.1fb6321d.css.map": "/Manish_Gupta/static/css/main.1fb6321d.css.map",
     "main.392b6f31.js.map": "/Manish_Gupta/static/js/main.392b6f31.js.map"
   },
   "entrypoints": [
-    "static/css/main.edd4e04c.css",
+    "static/css/main.1fb6321d.css",
     "static/js/main.392b6f31.js"
   ]
 }
