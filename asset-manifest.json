@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Manish_Gupta/static/css/main.95b2d129.css",
-    "main.js": "/Manish_Gupta/static/js/main.6ac91d60.js",
+    "main.css": "/Manish_Gupta/static/css/main.4565781d.css",
+    "main.js": "/Manish_Gupta/static/js/main.cdc82cc1.js",
     "static/media/youtube-clone-vercel.png": "/Manish_Gupta/static/media/youtube-clone-vercel.86daea3f05e25b522f8a.png",
     "static/media/uksangroup.png": "/Manish_Gupta/static/media/uksangroup.ba5c9314d4d2f47630d0.png",
     "static/media/javascriptintro.png": "/Manish_Gupta/static/media/javascriptintro.8021348f73c208587bd2.png",
@@ -20,11 +20,11 @@
     "static/media/MLGUI-Tool.jpg": "/Manish_Gupta/static/media/MLGUI-Tool.ddf2530f672a01a3571f.jpg",
     "static/media/photo.jpg": "/Manish_Gupta/static/media/photo.0c46cb20606309c90fac.jpg",
     "index.html": "/Manish_Gupta/index.html",
-    "main.95b2d129.css.map": "/Manish_Gupta/static/css/main.95b2d129.css.map",
-    "main.6ac91d60.js.map": "/Manish_Gupta/static/js/main.6ac91d60.js.map"
+    "main.4565781d.css.map": "/Manish_Gupta/static/css/main.4565781d.css.map",
+    "main.cdc82cc1.js.map": "/Manish_Gupta/static/js/main.cdc82cc1.js.map"
   },
   "entrypoints": [
-    "static/css/main.95b2d129.css",
-    "static/js/main.6ac91d60.js"
+    "static/css/main.4565781d.css",
+    "static/js/main.cdc82cc1.js"
   ]
 }
