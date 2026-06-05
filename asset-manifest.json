@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Manish_Gupta/static/css/main.829db4c1.css",
+    "main.css": "/Manish_Gupta/static/css/main.d14fe2b3.css",
     "main.js": "/Manish_Gupta/static/js/main.ae259d0d.js",
     "static/media/youtube-clone-vercel.webp": "/Manish_Gupta/static/media/youtube-clone-vercel.7e2820d3ac280cca95d6.webp",
     "static/media/uksangroup.webp": "/Manish_Gupta/static/media/uksangroup.e46f8d1cc01a9c7e3a2d.webp",
@@ -21,11 +21,11 @@
     "static/media/solarsystem-explorer.webp": "/Manish_Gupta/static/media/solarsystem-explorer.e6ef9fd3b6955546d2d2.webp",
     "static/media/photo.jpg": "/Manish_Gupta/static/media/photo.0c46cb20606309c90fac.jpg",
     "index.html": "/Manish_Gupta/index.html",
-    "main.829db4c1.css.map": "/Manish_Gupta/static/css/main.829db4c1.css.map",
+    "main.d14fe2b3.css.map": "/Manish_Gupta/static/css/main.d14fe2b3.css.map",
     "main.ae259d0d.js.map": "/Manish_Gupta/static/js/main.ae259d0d.js.map"
   },
   "entrypoints": [
-    "static/css/main.829db4c1.css",
+    "static/css/main.d14fe2b3.css",
     "static/js/main.ae259d0d.js"
   ]
 }
