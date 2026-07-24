@@ -1,126 +1,106 @@
-// src/components/Footer.jsx
-import React, { useState } from "react";
-import { FaHeart, FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import React from "react";
 import { Link } from "react-router-dom";
+import { 
+  FaGithub, FaLinkedin, FaInstagram, FaHeart, FaEnvelope, 
+  FaMapMarkerAlt, FaCode, FaHtml5, FaCss3Alt, FaBootstrap, FaGitAlt 
+} from "react-icons/fa";
+import { 
+  SiReact, SiTailwindcss, SiWordpress, SiJavascript, 
+  SiPython, SiNodedotjs, SiDjango 
+} from "react-icons/si";
 import "./Footer.css";
 
-// Import your logo
-import logo from "../assets/MH-logo.png";
-
 export default function Footer() {
-  const [hoveredIcon, setHoveredIcon] = useState(null);
-
-  const handleLogoClick = () => {
-    // Scroll to top when logo is clicked
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer-3d-wrapper">
-      {/* Animated Background */}
-      <div className="footer-bg-animation">
-        <div className="footer-wave footer-wave-1"></div>
-        <div className="footer-wave footer-wave-2"></div>
-        <div className="footer-wave footer-wave-3"></div>
-      </div>
+    <footer className="footer-light">
+      <div className="footer-container">
+        {/* Brand Section */}
+        <div className="footer-brand">
+          <Link to="/" className="footer-logo">
+            <em>MG</em> / Frontend Dev
+          </Link>
+          <p className="footer-tagline">Crafting digital experiences that work for people.</p>
+        </div>
 
-      {/* Floating Particles */}
-      <div className="footer-particles">
-        <div className="particle particle-1"></div>
-        <div className="particle particle-2"></div>
-        <div className="particle particle-3"></div>
-        <div className="particle particle-4"></div>
-        <div className="particle particle-5"></div>
-      </div>
+        {/* Explore Links */}
+        <div className="footer-links">
+          <h4>Explore</h4>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/projects">Projects</Link>
+          <Link to="/contact">Contact</Link>
+        </div>
 
-      <div className="footer-3d-container">
-        <div className="footer-content-3d">
-          {/* Left Section */}
-          <div className="footer-left-3d">
-            <div className="footer-brand">
-              <Link 
-                to="/"
-                onClick={handleLogoClick}
-                className="brand-logo-link"
-                aria-label="Go to home page"
-              >
-                <img 
-                  src={logo} 
-                  alt="Manish Gupta Logo" 
-                  className="brand-logo"
-                />
-              </Link>
-             
-            </div>
-            <p className="footer-copyright">
-               {new Date().getFullYear()} All rights reserved by Manish Gupta.
-            </p>
+        {/* Contact Info */}
+        <div className="footer-contact">
+          <h4>Contact</h4>
+          <div className="contact-item">
+            <FaEnvelope className="contact-icon" />
+            <a href="mailto:manishgupta.webdev@gmail.com" className="contact-link">
+              manishgupta.webdev@gmail.com
+            </a>
           </div>
-
-          {/* Center Section - Social Icons */}
-          <div className="footer-center-3d">
-            <div className="social-icons-3d">
-              {/* GitHub */}
-              <a
-                href="https://github.com/Guptamanish0990"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className={`social-icon-3d github-3d ${hoveredIcon === "github" ? "hovered" : ""}`}
-                onMouseEnter={() => setHoveredIcon("github")}
-                onMouseLeave={() => setHoveredIcon(null)}
-              >
-                <div className="icon-glow github-glow"></div>
-                <FaGithub className="icon-svg" />
-                <span className="icon-label">GitHub</span>
-              </a>
-
-              {/* LinkedIn */}
-              <a
-                href="https://www.linkedin.com/in/manish-gupta-0990"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className={`social-icon-3d linkedin-3d ${hoveredIcon === "linkedin" ? "hovered" : ""}`}
-                onMouseEnter={() => setHoveredIcon("linkedin")}
-                onMouseLeave={() => setHoveredIcon(null)}
-              >
-                <div className="icon-glow linkedin-glow"></div>
-                <FaLinkedin className="icon-svg" />
-                <span className="icon-label">LinkedIn</span>
-              </a>
-
-              {/* Instagram */}
-              <a
-                href="https://www.instagram.com/0990_manish?igsh=MWR0NWV3N2tteDlzbg=="
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className={`social-icon-3d instagram-3d ${hoveredIcon === "instagram" ? "hovered" : ""}`}
-                onMouseEnter={() => setHoveredIcon("instagram")}
-                onMouseLeave={() => setHoveredIcon(null)}
-              >
-                <div className="icon-glow instagram-glow"></div>
-                <FaInstagram className="icon-svg" />
-                <span className="icon-label">Instagram</span>
-              </a>
-            </div>
+          <div className="contact-item">
+            <FaMapMarkerAlt className="contact-icon" />
+            <span>Mumbai, India</span>
           </div>
         </div>
 
-        {/* Bottom Credit */}
-        <div className="footer-credit-3d">
-          <p className="credit-text">
-            Crafted with <FaHeart className="heart-icon-3d" /> using React & Modern Web Technologies
+        {/* Tech Stack */}
+        <div className="footer-tech">
+          <h4>Tech Stack</h4>
+          <div className="tech-icons">
+            <FaHtml5 title="HTML5" />
+            <FaCss3Alt title="CSS3" />
+            <SiJavascript title="JavaScript" />
+            <SiReact title="React" />
+            <FaBootstrap title="Bootstrap" />
+            <SiTailwindcss title="Tailwind CSS" />
+            <SiWordpress title="WordPress" />
+            <SiPython title="Python" />
+            <SiNodedotjs title="Node.js" />
+            <SiDjango title="Django" />
+            <FaGitAlt title="Git" />
+            <FaCode title="VS Code" />
+          </div>
+          <p className="tech-note">Always learning, always building.</p>
+        </div>
+
+        {/* Social Section */}
+        <div className="footer-social">
+          <h4>Connect</h4>
+          <div className="social-icons">
+            <a href="https://github.com/Guptamanish0990" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <FaGithub />
+            </a>
+            <a href="https://www.linkedin.com/in/manish-gupta-0990" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <FaLinkedin />
+            </a>
+            <a href="https://www.instagram.com/0990_manish" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <FaInstagram />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="footer-bottom">
+        <p>© {currentYear} <strong>Manish Gupta</strong>. All rights reserved.</p>
+        <div className="footer-bottom-right">
+          <a 
+            href="https://github.com/Guptamanish0990" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="github-footer-link"
+            aria-label="GitHub (all code pushed here)"
+          >
+            <FaGithub /> View all projects on GitHub
+          </a>
+          <p className="footer-credit">
+            Crafted with <FaHeart className="heart-icon" /> using React.js
           </p>
         </div>
-      </div>
-
-      {/* Decorative Elements */}
-      <div className="footer-decoration">
-        <div className="deco-circle deco-circle-1"></div>
-        <div className="deco-circle deco-circle-2"></div>
-        <div className="deco-circle deco-circle-3"></div>
       </div>
     </footer>
   );

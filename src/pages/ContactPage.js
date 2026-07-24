@@ -1,167 +1,151 @@
-// src/pages/Contact.js
-import React, { useState } from 'react';
-import './Contact.css';
-import { PiMapPinBold, PiAtBold } from 'react-icons/pi';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaGithub, FaLinkedin, FaInstagram, FaPaperPlane } from 'react-icons/fa';
+import './ContactPage.css';
 
-const fadeLeft = {
-  hidden: { opacity: 0, x: -40 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' } }
-};
+export default function ContactPage() {
+  // Custom cursor
+  useEffect(() => {
+    const c1 = document.createElement('div');
+    c1.id = 'c1';
+    document.body.appendChild(c1);
+    const c2 = document.createElement('div');
+    c2.id = 'c2';
+    document.body.appendChild(c2);
 
-const fadeRight = {
-  hidden: { opacity: 0, x: 40 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' } }
-};
+    let cx = 0, cy = 0, rx = 0, ry = 0;
+    const move = e => { cx = e.clientX; cy = e.clientY; c1.style.left = cx + 'px'; c1.style.top = cy + 'px'; };
+    const anim = () => {
+      rx += (cx - rx) * 0.13;
+      ry += (cy - ry) * 0.13;
+      c2.style.left = rx + 'px';
+      c2.style.top = ry + 'px';
+      requestAnimationFrame(anim);
+    };
+    window.addEventListener('mousemove', move);
+    anim();
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
-};
+    const interactive = document.querySelectorAll('a, button, .contact-card, .social-icon, .btn-bold, .btn-border, input, textarea');
+    const add = () => document.body.classList.add('hov');
+    const rem = () => document.body.classList.remove('hov');
+    interactive.forEach(el => { el.addEventListener('mouseenter', add); el.addEventListener('mouseleave', rem); });
 
-export default function Contact() {
-  const [hoveredCard, setHoveredCard] = useState(null);
-  const [formHovered, setFormHovered] = useState(false);
+    return () => {
+      window.removeEventListener('mousemove', move);
+      c1.remove(); c2.remove();
+      interactive.forEach(el => { el.removeEventListener('mouseenter', add); el.removeEventListener('mouseleave', rem); });
+    };
+  }, []);
+
+  // Scroll reveal
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('in')),
+      { threshold: 0.08 }
+    );
+    document.querySelectorAll('.sr').forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  // Form handling
+  const [formStatus, setFormStatus] = useState('');
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        setFormStatus('success');
+        form.reset();
+      } else {
+        setFormStatus('error');
+      }
+    } catch (err) {
+      setFormStatus('error');
+    }
+  };
 
   return (
-    <div className="contact-3d-wrapper">
-      {/* Animated Background */}
-      <div className="contact-bg-animation">
-        <div className="contact-bg-circle contact-bg-circle-1"></div>
-        <div className="contact-bg-circle contact-bg-circle-2"></div>
-        <div className="contact-bg-circle contact-bg-circle-3"></div>
+    <div className="sr contact-page">
+      <div className="contact-header">
+        <span className="hero-badge">📬 get in touch</span>
+        <h1 className="contact-title">Let’s <span className="accent">collaborate</span> & bring your ideas to life</h1>
+        <p className="contact-sub">Whether you have a project in mind or just want to say hi  I’d love to hear from you.</p>
       </div>
 
-      <motion.div 
-        className="contact-container-3d" 
-        initial="hidden" 
-        animate="visible"
-      >
-        {/* Left Section */}
-        <motion.div 
-          className="contact-left-3d" 
-          variants={fadeLeft}
-        >
-          {/* Header */}
-          <div className="contact-header-3d">
-            <motion.h2 
-              className="contact-title-3d"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              Let's Build Something Amazing Together
-            </motion.h2>
-            <motion.p 
-              className="contact-description-3d"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              Ready to bring your ideas to life? Whether it's a website, web app, or digital experience, 
-              I'm here to help turn your vision into reality. Let's discuss your project!
-            </motion.p>
+      <div className="contact-grid">
+        {/* Left: Contact info & social */}
+        <div className="contact-info">
+          <div className="info-cards">
+            <div className="contact-card">
+              <div className="card-icon"><FaEnvelope /></div>
+              <div className="card-details">
+                <h4>Email</h4>
+                <a href="mailto:manishgupta.webdev@gmail.com">manishgupta.webdev@gmail.com</a>
+              </div>
+            </div>
+            <div className="contact-card">
+              <div className="card-icon"><FaMapMarkerAlt /></div>
+              <div className="card-details">
+                <h4>Location</h4>
+                <span>Goregaon, Mumbai – 400065</span>
+              </div>
+            </div>
+            <div className="contact-card">
+              <div className="card-icon"><FaPhoneAlt /></div>
+              <div className="card-details">
+                <h4>Phone</h4>
+                <a href="tel:+919372232566">+91 93722 32566</a>
+              </div>
+            </div>
           </div>
 
-          {/* Contact Info Cards - Simplified */}
-          <div className="contact-info-grid">
-            {/* Location Card */}
-            <motion.div 
-              className={`contact-card-3d ${hoveredCard === 0 ? 'hovered' : ''}`}
-              variants={fadeUp}
-              onMouseEnter={() => setHoveredCard(0)}
-              onMouseLeave={() => setHoveredCard(null)}
-            >
-              <div className="card-glow gradient-purple"></div>
-              <div className="card-content-3d">
-                <div className="icon-wrapper-3d gradient-purple">
-                  <PiMapPinBold className="contact-icon-3d" />
-                </div>
-                <div className="card-text">
-                  <p className="card-label">Based In:</p>
-                  <a
-                    href="https://maps.app.goo.gl/aE4pojMaBDpqSx7m8"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="card-value map-link-3d"
-                  >
-                    Mumbai, India
-                  </a>
-                </div>
-              </div>
-              <div className="card-float-element card-float-1"></div>
-            </motion.div>
-
-            {/* Email Card */}
-            <motion.div 
-              className={`contact-card-3d ${hoveredCard === 1 ? 'hovered' : ''}`}
-              variants={fadeUp}
-              transition={{ delay: 0.1 }}
-              onMouseEnter={() => setHoveredCard(1)}
-              onMouseLeave={() => setHoveredCard(null)}
-            >
-              <div className="card-glow gradient-cyan"></div>
-              <div className="card-content-3d">
-                <div className="icon-wrapper-3d gradient-cyan">
-                  <PiAtBold className="contact-icon-3d" />
-                </div>
-                <div className="card-text">
-                  <p className="card-label">Email Me At:</p>
-                  <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=websitedeveloper0990@gmail.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="card-value email-link-3d"
-                  >
-                    websitedeveloper0990@gmail.com
-                  </a>
-                </div>
-              </div>
-              <div className="card-float-element card-float-2"></div>
-            </motion.div>
+          <div className="social-links">
+            <h4>Connect elsewhere</h4>
+            <div className="social-icons">
+              <a href="https://github.com/Guptamanish0990" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="GitHub">
+                <FaGithub />
+              </a>
+              <a href="https://www.linkedin.com/in/manish-gupta-0990" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
+                <FaLinkedin />
+              </a>
+              <a href="https://www.instagram.com/0990_manish" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
+                <FaInstagram />
+              </a>
+            </div>
           </div>
-        </motion.div>
+        </div>
 
-        {/* Right Section - Simplified Form */}
-        <motion.div 
-          className={`contact-right-3d ${formHovered ? 'form-hovered' : ''}`}
-          variants={fadeRight}
-          onMouseEnter={() => setFormHovered(true)}
-          onMouseLeave={() => setFormHovered(false)}
-        >
-          <div className="form-glow"></div>
-          <div className="form-container-3d">
-            <h2 className="form-title-3d">Send Me a Message</h2>
-            
-            <form action="https://formspree.io/f/mrbkywka" method="POST">
-              {/* Simplified Form Fields */}
-              <div className="form-group-3d full-width">
-                <label htmlFor="name">Your Name</label>
-                <input type="text" id="name" name="name" required />
-              </div>
-
-              <div className="form-group-3d full-width">
-                <label htmlFor="email">Your Email</label>
-                <input type="email" id="email" name="email" required />
-              </div>
-
-              <div className="form-group-3d full-width">
-                <label htmlFor="message">Your Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
-              </div>
-
-              <button type="submit" className="submit-button-3d">
-                <span>Send Message</span>
-                <span className="submit-icon">⚡</span>
-              </button>
-            </form>
-          </div>
-
-          {/* Floating Decorative Elements */}
-          <div className="form-float-element form-float-1"></div>
-          <div className="form-float-element form-float-2"></div>
-        </motion.div>
-      </motion.div>
+        {/* Right: Contact form */}
+        <div className="contact-form-wrapper">
+          <form
+            className="contact-form"
+            action="https://formspree.io/f/mrbkywka"
+            method="POST"
+            onSubmit={handleSubmit}
+          >
+            <h3>Send a message</h3>
+            <div className="form-group">
+              <input type="text" name="name" placeholder="Your name" required />
+            </div>
+            <div className="form-group">
+              <input type="email" name="email" placeholder="Your email" required />
+            </div>
+            <div className="form-group">
+              <textarea name="message" rows="5" placeholder="What would you like to discuss?" required></textarea>
+            </div>
+            <button type="submit" className="btn-bold">
+              Send message <FaPaperPlane className="btn-icon" />
+            </button>
+            {formStatus === 'success' && <p className="form-success">✓ Message sent! I'll get back to you soon.</p>}
+            {formStatus === 'error' && <p className="form-error">✗ Oops! Something went wrong. Please try again.</p>}
+          </form>
+        </div>
+      </div>
     </div>
   );
 }

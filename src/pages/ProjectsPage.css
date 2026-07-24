@@ -1,0 +1,641 @@
+/* ===== PROJECTS PAGE – LIGHT BRUTALIST WITH 3D FLIP & ANIMATIONS ===== */
+.projects-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* Scroll reveal animation */
+.sr {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+.sr.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projects-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeInDown 1s ease-out;
+}
+
+.projects-title {
+  font-family: 'Dela Gothic One', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  letter-spacing: -1px;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+.accent {
+  color: var(--a);
+}
+
+.projects-subtitle {
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  perspective: 1000px;
+}
+
+/* Staggered entry animation for cards */
+.project-card-3d {
+  background: transparent;
+  width: 100%;
+  height: 520px;
+  perspective: 1500px;
+  cursor: pointer;
+  animation: cardFadeUp 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1) backwards;
+}
+.project-card-3d:nth-child(1) { animation-delay: 0.05s; }
+.project-card-3d:nth-child(2) { animation-delay: 0.1s; }
+.project-card-3d:nth-child(3) { animation-delay: 0.15s; }
+.project-card-3d:nth-child(4) { animation-delay: 0.2s; }
+.project-card-3d:nth-child(5) { animation-delay: 0.25s; }
+.project-card-3d:nth-child(6) { animation-delay: 0.3s; }
+.project-card-3d:nth-child(7) { animation-delay: 0.35s; }
+.project-card-3d:nth-child(8) { animation-delay: 0.4s; }
+.project-card-3d:nth-child(9) { animation-delay: 0.45s; }
+.project-card-3d:nth-child(10) { animation-delay: 0.5s; }
+.project-card-3d:nth-child(11) { animation-delay: 0.55s; }
+
+@keyframes cardFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.2, 0.85, 0.4, 1.1);
+  transform-style: preserve-3d;
+  border-radius: 1.5rem;
+}
+
+.project-card-3d:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back common */
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: var(--soft);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.project-card-3d:hover .card-front,
+.project-card-3d:hover .card-back {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Front side – image area */
+.card-front {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.card-image-area {
+  position: relative;
+  height: 280px;          /* increased image height – no borders */
+  overflow: hidden;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: transparent;
+  border: none;
+}
+
+.zoom-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: white;
+  font-size: 0.9rem;
+  backdrop-filter: blur(2px);
+}
+
+.card-image-area:hover .zoom-overlay {
+  opacity: 1;
+}
+
+.zoom-icon {
+  font-size: 1.8rem;
+  animation: pulseIcon 1.5s infinite;
+}
+
+@keyframes pulseIcon {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+.card-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--soft);
+}
+
+.card-title {
+  font-family: 'Dela Gothic One', sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+  transition: transform 0.2s;
+}
+
+.project-card-3d:hover .card-title {
+  transform: translateX(4px);
+}
+
+/* Gradient text classes */
+.gradient-purple-pink { background: linear-gradient(135deg, #9333ea, #db2777, #dc2626); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.gradient-orange-yellow { background: linear-gradient(135deg, #f97316, #eab308, #d97706); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.gradient-pink-red { background: linear-gradient(135deg, #ec4899, #e11d48, #dc2626); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.gradient-blue-cyan { background: linear-gradient(135deg, #2563eb, #0891b2, #0d9488); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.gradient-indigo-purple { background: linear-gradient(135deg, #4f46e5, #9333ea, #db2777); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.gradient-violet-purple { background: linear-gradient(135deg, #7c3aed, #9333ea, #a21caf); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.gradient-red-orange { background: linear-gradient(135deg, #dc2626, #ea580c, #ca8a04); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.gradient-cyan-blue { background: linear-gradient(135deg, #0891b2, #2563eb, #7e22ce); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.gradient-emerald-green { background: linear-gradient(135deg, #059669, #16a34a, #65a30d); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.gradient-slate-gray { background: linear-gradient(135deg, #475569, #4b5563, #3f3f46); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+.card-description {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.card-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.tool-chip {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.75rem;
+  border-radius: 2rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--muted);
+  transition: all 0.2s;
+}
+
+.project-card-3d:hover .tool-chip {
+  background: var(--soft);
+  transform: translateY(-2px);
+}
+
+/* Back side */
+.card-back {
+  background: var(--ink);
+  transform: rotateY(180deg);
+  color: var(--bg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  pointer-events: auto;
+}
+
+.back-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  pointer-events: auto;
+}
+
+.back-title {
+  font-family: 'Dela Gothic One', sans-serif;
+  font-size: 1.4rem;
+  color: var(--bg);
+}
+
+.back-description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.back-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.back-tool-chip {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 2rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.project-card-3d:hover .back-tool-chip {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.back-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-project {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+  background: var(--a);
+  color: var(--bg);
+  border: none;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 5;
+  position: relative;
+}
+
+.btn-project.secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--bg);
+}
+
+.btn-project.image-btn {
+  background: rgba(59, 130, 246, 0.8);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-project.image-btn:hover {
+  background: #3b82f6;
+}
+
+.btn-project:hover {
+  transform: translateY(-3px) scale(1.02);
+  filter: brightness(1.1);
+  gap: 0.75rem;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(10px);
+  }
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  background: var(--soft);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: scaleIn 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--a);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.lightbox-close:hover {
+  transform: scale(1.1) rotate(90deg);
+  background: #ff4444;
+}
+
+.lightbox-image {
+    width: 100%;
+    height: auto;
+    max-height: 348vh;
+    object-fit: fill;
+    display: block;
+}
+
+.lightbox-caption {
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--soft);
+}
+
+/* Header fade-in */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects-page {
+    padding: 2rem 1rem;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-card-3d {
+    height: 500px;
+  }
+  .card-image-area {
+    height: 220px;
+  }
+  .back-buttons {
+    flex-direction: column;
+  }
+  .btn-project {
+    justify-content: center;
+  }
+}
+/* Force cards to be visible and scrollable on mobile */
+@media (max-width: 768px) {
+  .projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .project-card-3d {
+    height: auto !important;
+    min-height: 380px;
+    perspective: none;
+  }
+  .card-inner {
+    transform: none !important;
+    height: auto;
+    position: relative;
+  }
+  .card-front, .card-back {
+    position: relative;
+    transform: none;
+    backface-visibility: visible;
+    height: auto;
+  }
+  .card-back {
+    display: none;  /* only show front side on mobile */
+  }
+  .card-image-area {
+    height: 200px;  /* fixed height for images */
+  }
+  .card-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    background: #f0f0f0; /* fallback color while loading */
+  }
+}
+/* Flip cards – works on desktop and mobile */
+.project-card-3d {
+  background: transparent;
+  width: 100%;
+  height: 480px;           /* adjust as needed */
+  perspective: 1500px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .project-card-3d {
+    height: 460px;        /* slightly shorter on mobile */
+  }
+  /* remove any previous 'perspective: none' or 'transform: none' */
+}
+
+/* Rest of flip styles remain unchanged */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.2, 0.85, 0.4, 1.1);
+  transform-style: preserve-3d;
+  border-radius: 1.5rem;
+}
+.project-card-3d:hover .card-inner {
+  transform: rotateY(180deg);
+}
+/* ... other existing styles ... */
+/* Default (desktop) – 3D flip on hover */
+.project-card-3d {
+  background: transparent;
+  width: 100%;
+  height: 480px;
+  perspective: 1500px;
+  cursor: pointer;
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.2, 0.85, 0.4, 1.1);
+  transform-style: preserve-3d;
+  border-radius: 1.5rem;
+}
+.project-card-3d:hover .card-inner {
+  transform: rotateY(180deg);
+}
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 1.5rem;
+  overflow: auto;
+}
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* Mobile: stack front and back, no flip */
+@media (max-width: 768px) {
+  .project-card-3d {
+    height: auto !important;
+    perspective: none;
+  }
+  .card-inner {
+    transform: none !important;
+    position: relative;
+    height: auto;
+  }
+  .card-front, .card-back {
+    position: relative;
+    transform: none;
+    backface-visibility: visible;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  .card-back {
+    transform: none;
+  }
+}
+
+.back-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.btn-project {
+  padding: 0.8rem 1.2rem;   /* bigger tap area */
+  font-size: 0.9rem;
+}
+
+
+
+
+/* ===== Mobile: front buttons visible, back hidden ===== */
+@media (max-width: 768px) {
+  .front-buttons-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+  .btn-project-mobile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    background: var(--a);
+    color: var(--bg);
+    transition: all 0.2s;
+  }
+  .btn-project-mobile.secondary {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--ink);
+  }
+  .card-back {
+    display: none;
+  }
+  .project-card-3d {
+    height: auto !important;
+  }
+  .card-inner {
+    transform: none !important;
+    position: relative;
+    height: auto;
+  }
+  .card-front {
+    position: relative;
+    transform: none;
+    height: auto;
+    margin-bottom: 0;
+  }
+}
+
+/* Desktop: hide mobile buttons */
+@media (min-width: 769px) {
+  .front-buttons-mobile {
+    display: none;
+  }
+}

@@ -1,297 +1,244 @@
+import React, { useEffect } from 'react';
+import { 
+  FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaWordpress, 
+  FaCode, FaGithub, FaGitAlt, FaShoppingCart, FaPaintBrush,
+  FaCertificate
+} from 'react-icons/fa';
+import { 
+  SiJavascript, SiTailwindcss, SiNextdotjs, SiDjango, SiMysql
+} from 'react-icons/si';
+
 import './AboutPage.css';
-import MultiScreenSetup from '../components/MultiScreenSetup';
-import { motion } from 'framer-motion';
-
-// Animation Variants
-const fadeIn = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: 'easeOut' }
-  }
-};
-
-const slideIn = {
-  hidden: { opacity: 0, x: -50 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.8, ease: 'easeOut' }
-  }
-};
-
-const skillVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: (i) => ({
-    opacity: 1,
-    scale: 1,
-    transition: {
-      delay: i * 0.08,
-      duration: 0.5,
-      ease: [0.175, 0.885, 0.32, 1.275]
-    }
-  })
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, x: -30 },
-  visible: (i) => ({
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: i * 0.15,
-      duration: 0.6,
-      ease: 'easeOut'
-    }
-  })
-};
+import myPhoto from '../assets/photo.jpg';
 
 export default function AboutPage() {
-  // Education Data
-  const educationData = [
-    { 
-      year: '2021 – 2023', 
-      degree: 'Master of Science in Information Technology', 
-      institution: 'Patkar-Varde College, Mumbai' 
-    },
-    { 
-      year: '2018 – 2021', 
-      degree: 'Bachelor of Science in Information Technology', 
-      institution: 'DTSS College of Commerce and Science, Mumbai' 
-    },
-    { 
-      year: '2017 – 2018', 
-      degree: 'HSC (Science)', 
-      institution: 'DTSS College of Commerce and Science, Mumbai, Malad' 
-    },
-    { 
-      year: '2015 – 2016', 
-      degree: 'SSC', 
-      institution: 'Shree Radha Krishna Vidya Mandir High School, Mumbai' 
-    }
-  ];
+  // Custom cursor effect
+  useEffect(() => {
+    const c1 = document.createElement('div'); 
+    c1.id = 'c1'; 
+    document.body.appendChild(c1);
+    
+    const c2 = document.createElement('div'); 
+    c2.id = 'c2'; 
+    document.body.appendChild(c2);
+    
+    let cx = 0, cy = 0, rx = 0, ry = 0;
+    
+    const move = e => { 
+      cx = e.clientX; 
+      cy = e.clientY; 
+      c1.style.left = cx + 'px'; 
+      c1.style.top = cy + 'px'; 
+    };
+    
+    const anim = () => {
+      rx += (cx - rx) * 0.13;
+      ry += (cy - ry) * 0.13;
+      c2.style.left = rx + 'px';
+      c2.style.top = ry + 'px';
+      requestAnimationFrame(anim);
+    };
+    
+    window.addEventListener('mousemove', move);
+    anim();
+    
+    const interactive = document.querySelectorAll('a, button, .chip, .tag, .timeline-node, .edu-card, .hero-badge');
+    const add = () => document.body.classList.add('hov');
+    const rem = () => document.body.classList.remove('hov');
+    interactive.forEach(el => { 
+      el.addEventListener('mouseenter', add); 
+      el.addEventListener('mouseleave', rem); 
+    });
+    
+    return () => {
+      window.removeEventListener('mousemove', move);
+      c1.remove(); 
+      c2.remove();
+      interactive.forEach(el => { 
+        el.removeEventListener('mouseenter', add); 
+        el.removeEventListener('mouseleave', rem); 
+      });
+    };
+  }, []);
 
-  // Skills Data - Using Now
-  const currentSkills = [
-    { name: "HTML5", icon: `${process.env.PUBLIC_URL}/skills/html-icon.png` },
-    { name: "CSS3", icon: `${process.env.PUBLIC_URL}/skills/css-icons.png` },
-    { name: "JavaScript", icon: `${process.env.PUBLIC_URL}/skills/javascript-icon.png` },
-    { name: "React.js", icon: `${process.env.PUBLIC_URL}/skills/Reactjs_icon.png` },
-    { name: "Bootstrap", icon: `${process.env.PUBLIC_URL}/skills/Bootstrap-icon.png` },
-    { name: "Tailwind", icon: `${process.env.PUBLIC_URL}/skills/Tailwind-css-icon.png` },
-    { name: "WordPress", icon: `${process.env.PUBLIC_URL}/skills/Wordpress-icon.png` },
-    { name: "WooCommerce", icon: `${process.env.PUBLIC_URL}/skills/woocommerce-icon.png` },
-    { name: "GitHub", icon: `${process.env.PUBLIC_URL}/skills/Github-icon.png` },
-    { name: "ChatGPT", icon: `${process.env.PUBLIC_URL}/skills/ChatGPT_logo.svg.webp` },
-    { name: "Canva", icon: `${process.env.PUBLIC_URL}/skills/canva-icon.png` }
-  ];
+  // Intersection observer for scroll animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('in')),
+      { threshold: 0.08 }
+    );
+    document.querySelectorAll('.sr').forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
-  // Skills Data - Learning Now
+  // Skill data
+  const usingSkills = [
+    { name: 'HTML5', icon: <FaHtml5 />, color: '#E34F26' },
+    { name: 'CSS3', icon: <FaCss3Alt />, color: '#1572B6' },
+    { name: 'JavaScript', icon: <SiJavascript />, color: '#F7DF1E' },
+    { name: 'React.js', icon: <FaReact />, color: '#61DAFB' },
+    { name: 'Bootstrap', icon: <FaBootstrap />, color: '#7952B3' },
+    { name: 'Tailwind', icon: <SiTailwindcss />, color: '#06B6D4' },
+    { name: 'WordPress', icon: <FaWordpress />, color: '#21759B' },
+    { name: 'WooCommerce', icon: <FaShoppingCart />, color: '#96588A' }
+  ];
   const learningSkills = [
-    { name: "Next.js", icon: `${process.env.PUBLIC_URL}/skills/Nextjs-icons.png` },
-    { name: "Django", icon: `${process.env.PUBLIC_URL}/skills/django-icon.png` },
-    { name: "MySQL", icon: `${process.env.PUBLIC_URL}/skills/mySql-icon.png` }
+    { name: 'Next.js', icon: <SiNextdotjs />, color: '#000000' },
+    { name: 'Django', icon: <SiDjango />, color: '#092E20' },
+    { name: 'MySQL', icon: <SiMysql />, color: '#4479A1' }
   ];
-
-  // Skills Data - Other Tools
-  const otherTools = [
-    { name: "VS Code", icon: `${process.env.PUBLIC_URL}/skills/vs-Code-icon.png` },
-    { name: "GitHub", icon: `${process.env.PUBLIC_URL}/skills/Github-icon.png` },
-    { name: "Git", icon: `${process.env.PUBLIC_URL}/skills/Git-icon.png` }
+  const toolSkills = [
+    { name: 'VS Code', icon: <FaCode />, color: '#007ACC' },
+    { name: 'GitHub', icon: <FaGithub />, color: '#181717' },
+    { name: 'Git', icon: <FaGitAlt />, color: '#F05032' }
   ];
 
   return (
-    <motion.div
-      className="about-wrapper"
-      initial="hidden"
-      animate="visible"
-      variants={fadeIn}
-    >
-      {/* Main Heading */}
-      <motion.h1
-        className="responsive-heading"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeIn}
-      >
-        <span className="inline-block">Inspired&nbsp;</span>
-        <span className="inline-block">by&nbsp;</span>
-        <span className="inline-block">Curiosity</span>
-      </motion.h1>
+    <div className="sr about-page-alt">
+      {/* Hero card */}
+      <div className="about-hero-card">
+        <span className="hero-badge">👋 about me</span>
+        <h1 className="hero-title">Crafting code with <span className="accent">purpose</span> & <span className="accent">precision</span></h1>
+        <p className="hero-desc">Frontend developer who believes great design is invisible  it just works.</p>
+      </div>
 
-      {/* About Content Section */}
-      <motion.div 
-        className="about-content"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={fadeIn}
-      >
-        {/* MultiScreen Setup Component */}
-        <motion.div
-          className="about-img"
-          variants={slideIn}
-        >
-          <MultiScreenSetup />
-        </motion.div>
-
-        {/* About Info */}
-        <motion.div
-          className="about-info"
-          variants={fadeIn}
-        >
-          <h2 className="about-info-heading">About Me</h2>
-
-          <p>
-            Hi, I'm <strong>Manish</strong>. I'm a frontend developer and web designer who's passionate about creating digital experiences that actually work for people.
-          </p>
-
-          <p>
-            I've spent the past <strong>1+ years</strong> at{' '}
-            <a href="https://zencraft.io/" target="_blank" rel="noopener noreferrer">
-              Zencraft Consultancy Pvt. Ltd.
-            </a>{' '}
-            building responsive websites that don't just look good they feel right to use. Working with different clients really showed me that good design isn't about fancy visuals; it's about figuring out what people actually need and making it easy for them.
-          </p>
-
-          <p>
-            Here's what I believe: if a design doesn't solve a real problem, it's not doing its job. I want anyone visiting a site I've built to feel like they've found exactly what they're looking for, without any frustration.
-          </p>
-
-          <p>
-            Whether it's a business website, online store, or portfolio, I pour the same careful thought and attention to detail into every project. I'm always learning and tweaking my approach because in our field, standing still means falling behind.
-          </p>
-
-          <p>
-            Like what you're reading? I'd love to hear about what you're building. Let's create something that your audience will genuinely appreciate.
-          </p>
-        </motion.div>
-      </motion.div>
-
-      {/* Skills Section */}
-      <section className="skills-section">
-        <motion.h2
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeIn}
-        >
-          My Skills <span>✏️</span>
-        </motion.h2>
-
-        {/* Current Skills */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={fadeIn}
-        >
-          <h3>USING NOW:</h3>
-          <div className="grid">
-            {currentSkills.map((skill, idx) => (
-              <motion.div
-                key={idx}
-                custom={idx}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={skillVariants}
-              >
-                <img src={skill.icon} alt={skill.name} />
-                <p>{skill.name}</p>
-              </motion.div>
-            ))}
+      {/* Two‑column bio section */}
+      <div className="bio-grid">
+        <div className="bio-left">
+          <div className="avatar-icon">
+            <img 
+              src={myPhoto}
+              alt="Manish Gupta" 
+              className="avatar-img"
+            />
           </div>
-        </motion.div>
-
-        {/* Learning Skills */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={fadeIn}
-        >
-          <h3>LEARNING NOW:</h3>
-          <div className="grid">
-            {learningSkills.map((skill, idx) => (
-              <motion.div
-                key={idx}
-                custom={idx}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={skillVariants}
-              >
-                <img src={skill.icon} alt={skill.name} />
-                <p>{skill.name}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Other Tools */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={fadeIn}
-        >
-          <h3>OTHER TOOLS:</h3>
-          <div className="grid">
-            {otherTools.map((tool, idx) => (
-              <motion.div
-                key={idx}
-                custom={idx}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={skillVariants}
-              >
-                <img src={tool.icon} alt={tool.name} />
-                <p>{tool.name}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Education Section */}
-      <div className="education-section">
-        <motion.h2
-          className="edu-title"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeIn}
-        >
-          🎓 My Education
-        </motion.h2>
-
-        <div className="edu-timeline">
-          {educationData.map((edu, idx) => (
-            <motion.div
-              className="edu-item"
-              key={idx}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.5 }}
-              custom={idx}
-              variants={itemVariants}
-            >
-              <div className="edu-dot"></div>
-              <div className="edu-content">
-                <div className="edu-header">
-                  <h3 className="edu-degree">{edu.degree}</h3>
-                  <span className="edu-year">{edu.year}</span>
+          {/* Holographic code card */}
+          <div className="card-3d">
+            <div className="holographic-card">
+              <div className="code-animation">
+                <div className="code-line">
+                  <span className="syntax-keyword">const</span> <span className="syntax-var">developer</span> = {'{'}
                 </div>
-                <p className="edu-institution">{edu.institution}</p>
+                <div className="code-line">
+                  &nbsp;&nbsp;name: <span className="syntax-string">"Manish Gupta"</span>,
+                </div>
+                <div className="code-line">
+                  &nbsp;&nbsp;role: <span className="syntax-string">"Frontend Developer"</span>,
+                </div>
+                <div className="code-line">
+                  &nbsp;&nbsp;location: <span className="syntax-string">"Mumbai, India"</span>,
+                </div>
+                <div className="code-line">
+                  &nbsp;&nbsp;experience: <span className="syntax-number">1</span>+ year,
+                </div>
+                <div className="code-line">
+                  &nbsp;&nbsp;projects: <span className="syntax-number">8</span>+,
+                </div>
+                <div className="code-line">
+                  &nbsp;&nbsp;skills: [<span className="syntax-string">"React"</span>, <span className="syntax-string">"WordPress"</span>, <span className="syntax-string">"Tailwind"</span>],
+                </div>
+                <div className="code-line">
+                  &nbsp;&nbsp;passion: <span className="syntax-string">"Creating intuitive UX"</span>
+                </div>
+                <div className="code-line">{'}'};</div>
               </div>
-            </motion.div>
-          ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="bio-right">
+          <p>Hi, I'm <strong>Manish</strong>. I'm a frontend developer and web designer who's passionate about creating digital experiences that actually work for people.</p>
+          <p>I've spent the past <strong>1+ years</strong> at <a href="https://zencraft.io/" target="_blank" rel="noopener noreferrer">Zencraft Consultancy Pvt. Ltd.</a> building responsive websites that don't just look good  they feel right to use. Working with different clients really showed me that good design isn't about fancy visuals; it's about figuring out what people actually need and making it easy for them.</p>
+          <p>Here's what I believe: if a design doesn't solve a real problem, it's not doing its job. I want anyone visiting a site I've built to feel like they've found exactly what they're looking for, without any frustration.</p>
+          <div className="expertise-tags">
+            <span className="tag"><FaReact /> React.js</span>
+            <span className="tag"><FaWordpress /> WordPress</span>
+            <span className="tag"><SiTailwindcss /> Tailwind CSS</span>
+            <span className="tag"><FaPaintBrush /> UI/UX focus</span>
+          </div>
         </div>
       </div>
-    </motion.div>
+
+      {/* Skills section – chip layout */}
+      <div className="skills-section-alt">
+        <h2>My Toolbox</h2>
+        <div className="skill-category">
+          <h3>🔨 Using now</h3>
+          <div className="skill-chips">
+            {usingSkills.map(s => (
+              <span key={s.name} className="chip">
+                <span style={{ color: s.color }}>{s.icon}</span>
+                {s.name}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="skill-category">
+          <h3>📖 Learning</h3>
+          <div className="skill-chips">
+            {learningSkills.map(s => (
+              <span key={s.name} className="chip">
+                <span style={{ color: s.color }}>{s.icon}</span>
+                {s.name}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="skill-category">
+          <h3>🛠️ Tools</h3>
+          <div className="skill-chips">
+            {toolSkills.map(s => (
+              <span key={s.name} className="chip">
+                <span style={{ color: s.color }}>{s.icon}</span>
+                {s.name}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Journey timeline */}
+      <div className="journey-section">
+        <h2>The journey so far</h2>
+        <div className="timeline">
+          <div className="timeline-node">
+            <div className="timeline-year">2024 – present</div>
+            <div className="timeline-detail">
+              <h4>Frontend Developer @ Zencraft Consultancy</h4>
+              <p>Built 6+ client websites, improved performance by 40%, integrated REST APIs, led responsive redesigns.</p>
+            </div>
+          </div>
+          <div className="timeline-node">
+            <div className="timeline-year">2023</div>
+            <div className="timeline-detail">
+              <h4>Master's degree (M.Sc. IT)</h4>
+              <p>ML GUI Tool – An M.Sc. IT project built using Python and Tkinter for no-code machine learning model training, data preprocessing, and result visualization.</p>
+            </div>
+          </div>
+          <div className="timeline-node">
+            <div className="timeline-year">2021</div>
+            <div className="timeline-detail">
+              <h4>Bachelor's degree (B.Sc. IT)</h4>
+              <p>DC Motor Speed Control – A B.Sc. project for wireless DC motor speed control using Bluetooth, Python, and PWM-based speed adjustment.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Certificates */}
+      <div className="edu-section">
+        <h2>Certificates</h2>
+        <div className="edu-grid">
+          <div className="edu-card">
+            <div className="edu-year"><FaCertificate style={{ marginRight: '6px' }} /> 2024</div>
+            <div className="edu-name">Full Stack Development – SkillUp Online</div>
+          </div>
+          <div className="edu-card">
+            <div className="edu-year"><FaCertificate style={{ marginRight: '6px' }} /> 2024</div>
+            <div className="edu-name">Java Full Stack – Anudip Foundation</div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
