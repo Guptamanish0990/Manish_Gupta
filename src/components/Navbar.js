@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import resumePDF from '../assets/Manish.R.Gupta.pdf';
+import resumePDF from '../assets/Manish.R.Gupta2026.pdf';
 
 export default function Navbar({ onNavigate }) {
   const location = useLocation();
@@ -17,7 +17,7 @@ export default function Navbar({ onNavigate }) {
   const handleDownload = () => {
     const link = document.createElement('a');
     link.href = resumePDF;
-    link.download = 'Manish.R.Gupta.pdf';
+    link.download = 'Manish.R.Gupta2026.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
