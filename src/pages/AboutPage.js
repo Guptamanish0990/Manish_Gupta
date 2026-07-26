@@ -148,12 +148,13 @@ export default function AboutPage() {
 
         <div className="bio-right">
           <p>Hi, I'm <strong>Manish</strong>. I'm a frontend developer and web designer who's passionate about creating digital experiences that actually work for people.</p>
-          <p>I've spent the past <strong>1+ years</strong> at <a href="https://zencraft.io/" target="_blank" rel="noopener noreferrer">Zencraft Consultancy Pvt. Ltd.</a> building responsive websites that don't just look good  they feel right to use. Working with different clients really showed me that good design isn't about fancy visuals; it's about figuring out what people actually need and making it easy for them.</p>
+          <p>I've spent the past <strong>2+ years</strong> at <a href="https://zencraft.io/" target="_blank" rel="noopener noreferrer">Zencraft Consultancy Pvt. Ltd.</a> building responsive websites that don't just look good  they feel right to use. Working with different clients really showed me that good design isn't about fancy visuals; it's about figuring out what people actually need and making it easy for them.</p>
           <p>Here's what I believe: if a design doesn't solve a real problem, it's not doing its job. I want anyone visiting a site I've built to feel like they've found exactly what they're looking for, without any frustration.</p>
           <div className="expertise-tags">
             <span className="tag"><FaReact /> React.js</span>
             <span className="tag"><FaWordpress /> WordPress</span>
             <span className="tag"><SiTailwindcss /> Tailwind CSS</span>
+
             <span className="tag"><FaPaintBrush /> UI/UX focus</span>
           </div>
         </div>
