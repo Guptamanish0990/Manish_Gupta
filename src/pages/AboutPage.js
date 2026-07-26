@@ -129,7 +129,7 @@ export default function AboutPage() {
                   &nbsp;&nbsp;location: <span className="syntax-string">"Mumbai, India"</span>,
                 </div>
                 <div className="code-line">
-                  &nbsp;&nbsp;experience: <span className="syntax-number">1</span>+ year,
+                  &nbsp;&nbsp;experience: <span className="syntax-number">2</span>+ year,
                 </div>
                 <div className="code-line">
                   &nbsp;&nbsp;projects: <span className="syntax-number">8</span>+,
