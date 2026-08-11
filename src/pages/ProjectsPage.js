@@ -19,8 +19,20 @@ import HumanBody from '../assets/interactive-humanbody.webp';
 import DebugQuest from '../assets/debugingquest.webp';
 import JavaScriptPrep from '../assets/javascriptintro.webp';
 import uksangroupImage from '../assets/uksangroup.webp';
+import codeMasterHub from '../assets/code-master-hub.webp';
 
 const projects = [
+  {
+    id: 0,
+    title: 'CodeMaster Hub',
+    description: "A comprehensive coding learning platform covering technologies from basics to advanced — HTML, CSS, JavaScript, React, Next.js, Node.js, Python, and more. Includes structured learning paths for frontend, backend, and CMS technologies, aimed at helping developers prepare for interviews and strengthen real-world coding skills. Built as a full-stack resource hub with 25+ technologies covered, from beginner to expert level.",
+    tech: 'React',
+    image: codeMasterHub,
+    link: 'https://code-master-hub-nine.vercel.app/',
+    repo: 'https://github.com/Guptamanish0990/CodeMasterHub',
+    tools: ['React', 'Next.js', 'JavaScript', 'Tailwind CSS'],
+    gradient: 'gradient-cyan-blue'
+  },
   {
     id: 1,
     title: 'Dr. Bhavsar Dental Care',
