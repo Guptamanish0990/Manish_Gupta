@@ -1,10 +1,11 @@
 {
   "files": {
     "main.css": "/Manish_Gupta/static/css/main.d14fe2b3.css",
-    "main.js": "/Manish_Gupta/static/js/main.855dc6ed.js",
+    "main.js": "/Manish_Gupta/static/js/main.60bf339b.js",
     "static/media/youtube-clone-vercel.webp": "/Manish_Gupta/static/media/youtube-clone-vercel.7e2820d3ac280cca95d6.webp",
     "static/media/uksangroup.webp": "/Manish_Gupta/static/media/uksangroup.e46f8d1cc01a9c7e3a2d.webp",
     "static/media/javascriptintro.webp": "/Manish_Gupta/static/media/javascriptintro.0b3a1f3a553f19307c9c.webp",
+    "static/media/code-master-hub.webp": "/Manish_Gupta/static/media/code-master-hub.377d74e99652462a85f6.webp",
     "static/media/drbhavsarsdentalcare4kidsin_webperfecto.webp": "/Manish_Gupta/static/media/drbhavsarsdentalcare4kidsin_webperfecto.2db671ff7bc372d122a7.webp",
     "static/media/LaxStoreImg.webp": "/Manish_Gupta/static/media/LaxStoreImg.6e57f2d4330ceb99df56.webp",
     "static/media/street-vada-pav.webp": "/Manish_Gupta/static/media/street-vada-pav.cecfe36cf26381f1b4e1.webp",
@@ -15,17 +16,17 @@
     "static/media/Jainandco-webperfecto.webp": "/Manish_Gupta/static/media/Jainandco-webperfecto.7324d54c0252b6073009.webp",
     "static/media/Hair_spa.webp": "/Manish_Gupta/static/media/Hair_spa.000a8922accda958fd61.webp",
     "static/media/Event Management System.webp": "/Manish_Gupta/static/media/Event Management System.4562b2b4fe65a7c4023a.webp",
+    "static/media/Manish.R.Gupta.pdf": "/Manish_Gupta/static/media/Manish.R.Gupta.a25c08c2c4bf2bcd2a04.pdf",
     "static/media/interactive-humanbody.webp": "/Manish_Gupta/static/media/interactive-humanbody.3fe4efae9585991942e1.webp",
     "static/media/DC Motor Control via Mobile.webp": "/Manish_Gupta/static/media/DC Motor Control via Mobile.04e1d0e95dfd32c9b67f.webp",
     "static/media/solarsystem-explorer.webp": "/Manish_Gupta/static/media/solarsystem-explorer.e6ef9fd3b6955546d2d2.webp",
-    "static/media/Manish.R.Gupta2026.pdf": "/Manish_Gupta/static/media/Manish.R.Gupta2026.ba3b16e215843781d61e.pdf",
     "static/media/photo.jpg": "/Manish_Gupta/static/media/photo.0c46cb20606309c90fac.jpg",
     "index.html": "/Manish_Gupta/index.html",
     "main.d14fe2b3.css.map": "/Manish_Gupta/static/css/main.d14fe2b3.css.map",
-    "main.855dc6ed.js.map": "/Manish_Gupta/static/js/main.855dc6ed.js.map"
+    "main.60bf339b.js.map": "/Manish_Gupta/static/js/main.60bf339b.js.map"
   },
   "entrypoints": [
     "static/css/main.d14fe2b3.css",
-    "static/js/main.855dc6ed.js"
+    "static/js/main.60bf339b.js"
   ]
 }
