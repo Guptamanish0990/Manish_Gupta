@@ -20,6 +20,7 @@ import DebugQuest from '../assets/debugingquest.webp';
 import JavaScriptPrep from '../assets/javascriptintro.webp';
 import uksangroupImage from '../assets/uksangroup.webp';
 import codeMasterHub from '../assets/code-master-hub.webp';
+import professionalDeveloper from '../assets/professional-developer.png';
 
 const projects = [
   {
@@ -208,6 +209,17 @@ const projects = [
     repo: null,
     tools: ['Python', 'Tkinter', 'Scikit‑learn'],
     gradient: 'gradient-purple-pink'
+  },
+  {
+    id: 17,
+    title: 'LinkX URL Shortener',
+    description: 'A modern URL-shortening application that converts long links into concise, shareable URLs. LinkX provides a simple interface for creating and using shortened links, making link sharing faster and more convenient.',
+    tech: 'React.js',
+    image: professionalDeveloper,
+    link: 'https://linkx-url-shortener-gules.vercel.app/',
+    repo: null,
+    tools: ['React.js', 'JavaScript', 'Vercel'],
+    gradient: 'gradient-cyan-blue'
   }
 ];
 
