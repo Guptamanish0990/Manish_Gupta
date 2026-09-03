@@ -165,7 +165,7 @@ export default function HomePage() {
           <div className="skc"><span className="sc-ico"><FaPython /></span><div className="sc-n">Python</div><div className="sc-c">Language</div></div>
           <div className="skc"><span className="sc-ico"><FaNodeJs /></span><div className="sc-n">Node.js</div><div className="sc-c">Runtime</div></div>
           <div className="skc"><span className="sc-ico"><DiMongodb /></span><div className="sc-n">MongoDB</div><div className="sc-c">Database</div></div>
-          <div className="skc"><span className="sc-ico"><SiVercel /></span><div className="sc-n">Vercel</div><div className="sc-c">Hosting</div></div>
+          
           <div className="skc"><span className="sc-ico"><SiMysql /></span><div className="sc-n">MySQL</div><div className="sc-c">Database</div></div>
           <div className="skc"><span className="sc-ico"><SiNetlify /></span><div className="sc-n">Netlify</div><div className="sc-c">Hosting</div></div>
           <div className="skc"><span className="sc-ico"><SiRender /></span><div className="sc-n">Render</div><div className="sc-c">Database</div></div>
