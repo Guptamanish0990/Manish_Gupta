@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import { FaReact, FaWordpress, FaShoppingCart, FaGitAlt, FaPython, FaNodeJs } from 'react-icons/fa';
-import { SiNextdotjs, SiJavascript, SiTailwindcss, SiVercel } from 'react-icons/si';
+import { SiNextdotjs, SiJavascript, SiTailwindcss, SiVercel, SiMysql, SiNetlify, SiRender } from 'react-icons/si';
 import './HomePage.css';
+import { DiMongodb } from 'react-icons/di';
 
 export default function HomePage() {
   // Typewriter effect
@@ -130,6 +131,7 @@ export default function HomePage() {
           <span className="mqi">Git / GitHub</span><span className="mqi">✦</span>
           <span className="mqi">MySQL</span><span className="mqi">✦</span>
           <span className="mqi hi">Vercel</span><span className="mqi">✦</span>
+          <span className="mqi hi">MongoDB</span><span className="mqi">✦</span>
           {/* duplicate for seamless loop */}
           <span className="mqi hi">React.js</span><span className="mqi">✦</span>
           <span className="mqi hi">Next.js</span><span className="mqi">✦</span>
@@ -141,6 +143,7 @@ export default function HomePage() {
           <span className="mqi">Git / GitHub</span><span className="mqi">✦</span>
           <span className="mqi">MySQL</span><span className="mqi">✦</span>
           <span className="mqi hi">Vercel</span><span className="mqi">✦</span>
+          <span className="mqi hi">MongoDB</span><span className="mqi">✦</span>
         </div>
       </div>
 
@@ -161,6 +164,11 @@ export default function HomePage() {
           <div className="skc"><span className="sc-ico"><SiVercel /></span><div className="sc-n">Vercel</div><div className="sc-c">Deployment</div></div>
           <div className="skc"><span className="sc-ico"><FaPython /></span><div className="sc-n">Python</div><div className="sc-c">Language</div></div>
           <div className="skc"><span className="sc-ico"><FaNodeJs /></span><div className="sc-n">Node.js</div><div className="sc-c">Runtime</div></div>
+          <div className="skc"><span className="sc-ico"><DiMongodb /></span><div className="sc-n">MongoDB</div><div className="sc-c">Database</div></div>
+          <div className="skc"><span className="sc-ico"><SiVercel /></span><div className="sc-n">Vercel</div><div className="sc-c">Hosting</div></div>
+          <div className="skc"><span className="sc-ico"><SiMysql /></span><div className="sc-n">MySQL</div><div className="sc-c">Database</div></div>
+          <div className="skc"><span className="sc-ico"><SiNetlify /></span><div className="sc-n">Netlify</div><div className="sc-c">Hosting</div></div>
+          <div className="skc"><span className="sc-ico"><SiRender /></span><div className="sc-n">Render</div><div className="sc-c">Database</div></div>
         </div>
       </section>
 
